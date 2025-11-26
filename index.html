@@ -1,397 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Bhavesh Adivi — About</title>
-<meta name="description" content="Bhavesh Adivi — TJHSST '28. Interests: ML, medical imaging, robotics, STEM leadership & mentorship. Fairfax Youth Mental Health Ambassador." />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bhavesh Adivi</title>
+
 <style>
-  :root{
-    --bg1:#0f1724;
-    --bg2:#071029;
-    --accent:#7c5cff;
-    --muted:#9aa6b2;
-    --card:#0b1220;
-    --glass: rgba(255,255,255,0.04);
-    --glass-2: rgba(255,255,255,0.02);
-    --radius: 16px;
-    --max-width:1100px;
-    --ease: cubic-bezier(.2,.9,.3,1);
-  }
-  *{box-sizing:border-box}
-  html,body{height:100%}
-  body{
-    margin:0;
-    font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial;
-    background: radial-gradient(1200px 600px at 10% 10%, rgba(124,92,255,0.08), transparent 8%),
-                radial-gradient(1000px 500px at 90% 90%, rgba(0,206,201,0.04), transparent 8%),
-                linear-gradient(180deg,var(--bg1),var(--bg2));
-    color:#e6eef6;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    line-height:1.45;
-    padding:48px 20px;
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:24px;
-  }
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #fafafa;
+        color: #222;
+        overflow-x: hidden;
+    }
 
-  /* Container */
-  .wrap{
-    width:100%;
-    max-width:var(--max-width);
-  }
+    header {
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: white;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        animation: fadeDown 0.6s ease;
+    }
 
-  /* Header / Hero */
-  header{
-    display:grid;
-    grid-template-columns: 1fr 360px;
-    gap:28px;
-    align-items:center;
-    margin-bottom:28px;
-  }
-  @media (max-width:900px){
-    header{ grid-template-columns: 1fr; padding-bottom:12px }
-  }
+    nav a {
+        margin-left: 20px;
+        text-decoration: none;
+        color: #222;
+        font-weight: bold;
+        transition: opacity 0.2s ease;
+    }
+    nav a:hover { opacity: 0.6; }
 
-  .hero{
-    padding:28px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
-    border-radius:var(--radius);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.45), inset 0 1px 0 rgba(255,255,255,0.02);
-    position:relative;
-    overflow:hidden;
-  }
+    .hero {
+        padding: 120px 40px;
+        max-width: 800px;
+        margin: auto;
+        animation: fadeIn 1s ease;
+    }
 
-  /* decorative floating blobs (pure CSS animation) */
-  .blob{
-    position:absolute;
-    border-radius:50%;
-    filter: blur(36px);
-    opacity:0.7;
-    transform: translateZ(0);
-    mix-blend-mode:screen;
-  }
-  .b1{ width:360px; height:360px; background:linear-gradient(135deg,var(--accent),#3ec5ff); top:-80px; right:-120px; animation:blob1 14s infinite alternate; }
-  .b2{ width:260px; height:260px; background:linear-gradient(120deg,#00c8b8,#7c5cff); bottom:-90px; left:-80px; animation:blob2 18s infinite alternate; }
-  @keyframes blob1{ to { transform: translate3d(20px,-10px,0) scale(1.08) } }
-  @keyframes blob2{ to { transform: translate3d(-10px,14px,0) scale(.95) } }
-  @media (prefers-reduced-motion: reduce){ .b1,.b2{ animation:none } }
+    h1 {
+        font-size: 48px;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
 
-  h1{
-    margin:0 0 6px 0; font-size: clamp(24px, 3.2vw, 34px); letter-spacing:-0.6px; font-weight:800;
-    display:flex; gap:12px; align-items:center;
-  }
-  .subtitle{ color:var(--muted); font-weight:400; font-size:14px; margin-bottom:18px; }
+    h2 {
+        font-weight: normal;
+        margin-top: 5px;
+        color: #777;
+    }
 
-  .tagline{
-    margin:0 0 18px 0; font-size:15px; color:#dfe9f6; max-width:64ch;
-  }
+    .section {
+        padding: 60px 40px;
+        max-width: 900px;
+        margin: auto;
+        animation: slideUp 0.9s ease;
+    }
 
-  .cta-row{ display:flex; gap:12px; align-items:center; flex-wrap:wrap }
-  .btn{
-    --pad:10px 14px;
-    background:linear-gradient(90deg,var(--accent),#00c8b8);
-    padding:var(--pad); border-radius:12px; font-weight:600; font-size:14px;
-    color: #071029; text-decoration:none; display:inline-flex; gap:8px; align-items:center;
-    box-shadow: 0 6px 20px rgba(92,56,255,0.14);
-    transform:translateY(0); transition:transform .22s var(--ease), box-shadow .22s var(--ease);
-  }
-  .btn:hover{ transform:translateY(-4px); box-shadow:0 18px 36px rgba(124,92,255,0.14) }
+    .card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+        transition: transform 0.25s ease;
+    }
+    .card:hover {
+        transform: translateY(-4px);
+    }
 
-  .outline{
-    background:transparent; border:1px solid rgba(255,255,255,0.06); padding:10px 12px; color:var(--muted);
-  }
+    footer {
+        padding: 20px 40px;
+        text-align: center;
+        color: #666;
+        margin-top: 60px;
+    }
 
-  /* Avatar / card */
-  .card{
-    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-    border-radius:var(--radius);
-    overflow:hidden;
-    padding:22px;
-    min-height:220px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    gap:14px;
-  }
-  .avatar{
-    width:84px; height:84px; border-radius:16px; background:linear-gradient(180deg,#e6eef6,rgba(255,255,255,0.06));
-    display:flex; align-items:center; justify-content:center; font-weight:800; color:var(--bg2); font-size:20px;
-    box-shadow: 0 6px 20px rgba(2,6,23,0.5);
-  }
-  .meta{ color:var(--muted); font-size:13px }
-
-  /* Main sections layout */
-  main{
-    display:grid; grid-template-columns: 1fr 360px; gap:28px;
-  }
-  @media (max-width:900px){
-    main{ grid-template-columns: 1fr; }
-  }
-
-  /* content cards */
-  section.card-block{
-    background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.01));
-    border-radius:12px; padding:18px; box-shadow: 0 6px 18px rgba(2,6,23,0.6);
-  }
-
-  .grid-2{ display:grid; grid-template-columns: repeat(2,1fr); gap:12px }
-  @media (max-width:700px){ .grid-2{ grid-template-columns: 1fr } }
-
-  .pill{ display:inline-flex; gap:8px; align-items:center; font-size:13px; padding:8px 10px; border-radius:999px; background:var(--glass-2); color:var(--muted); border:1px solid rgba(255,255,255,0.02) }
-
-  /* Projects */
-  .projects{ display:grid; gap:12px }
-  .project{
-    display:flex; gap:12px; align-items:center; padding:12px; border-radius:10px; background:linear-gradient(180deg, rgba(255,255,255,0.018), transparent);
-    transition: transform .32s var(--ease), box-shadow .32s var(--ease);
-    transform: translateY(0);
-  }
-  .project:hover{ transform: translateY(-6px); box-shadow: 0 18px 40px rgba(0,0,0,0.6); }
-  .project .dot{ width:48px; height:48px; border-radius:10px; display:flex; align-items:center; justify-content:center; font-weight:700; background:linear-gradient(135deg,#0b1220,rgba(255,255,255,0.02)); color:var(--accent) }
-  .project h4{ margin:0; font-size:15px }
-  .project p{ margin:4px 0 0 0; color:var(--muted); font-size:13px }
-
-  /* Timeline / badges */
-  .timeline{ display:flex; flex-direction:column; gap:10px }
-  .time-item{ display:flex; gap:10px; align-items:flex-start; }
-  .time-dot{ width:10px; height:10px; border-radius:50%; background:var(--accent); margin-top:6px; flex-shrink:0; }
-  .time-content h5{ margin:0 0 4px 0; font-size:13px }
-  .time-content p{ margin:0; color:var(--muted); font-size:13px }
-
-  footer{ margin-top:28px; color:var(--muted); font-size:13px; display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap }
-  .socials{ display:flex; gap:8px; align-items:center }
-
-  /* scroll reveal util */
-  .reveal{ opacity:0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease) }
-  .reveal.visible{ opacity:1; transform:none }
-
-  /* small utilities */
-  .muted{ color:var(--muted) }
-  .small{ font-size:13px }
-  a.no-decor{ color:inherit; text-decoration:none }
-  code.kv{ background:rgba(255,255,255,0.02); padding:6px 8px; border-radius:8px; font-weight:600; color:var(--muted) }
+    /* Animations */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
+    @keyframes slideUp {
+        from { transform: translateY(40px); opacity: 0; }
+        to   { transform: translateY(0); opacity: 1; }
+    }
+    @keyframes fadeDown {
+        from { transform: translateY(-20px); opacity: 0; }
+        to   { transform: translateY(0); opacity: 1; }
+    }
 </style>
 </head>
+
 <body>
-  <div class="wrap" role="main">
-    <header>
-      <div class="hero" aria-labelledby="hero-title">
-        <div class="b1 blob" aria-hidden="true"></div>
-        <div class="b2 blob" aria-hidden="true"></div>
 
-        <h1 id="hero-title">
-          Bhavesh Adivi
-          <svg width="28" height="28" viewBox="0 0 24 24" aria-hidden="true" style="opacity:.9">
-            <path fill="currentColor" d="M12 2L15 8l6 .5-4.5 3.4L18 20l-6-4-6 4 1.5-8.1L3 8.5 9 8z" />
-          </svg>
-        </h1>
-        <div class="subtitle">TJHSST ’28 • ML & Medical Imaging • Robotics • STEM leadership & mentorship</div>
+<header>
+    <div style="font-size: 20px; font-weight: bold;">Bhavesh Adivi</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="projects.html">Projects</a>
+    </nav>
+</header>
 
-        <p class="tagline">I build machine learning projects that intersect medical imaging and robotics, mentor STEM students, and advocate for youth mental health across Fairfax. Currently working on a few passion projects in my free time — I enjoy turning ideas into reproducible notebooks and teaching others how to code confidently.</p>
+<div class="hero">
+    <h1>Hi, I'm Bhavesh.</h1>
+    <h2>TJHSST '28 • ML & Medical Imaging • Robotics • STEM Leadership</h2>
+</div>
 
-        <div class="cta-row">
-          <a class="btn" href="#projects" title="View projects">See projects</a>
-          <a class="btn outline" href="#contact" title="Contact">Contact / Connect</a>
-          <div class="pill" aria-hidden="true">Fairfax Youth Mental Health Ambassador</div>
-        </div>
+<div class="section">
+    <div class="card">
+        <h3>About Me</h3>
+        <p>
+            I'm a student at TJHSST ('28) interested in machine learning, medical imaging,
+            robotics, and STEM mentorship. I'm involved in leadership initiatives, including 
+            serving as a Fairfax Youth Mental Health Ambassador.
+        </p>
+    </div>
 
-        <p style="margin-top:14px" class="muted small">Pro tip: press <code class="kv">Tab</code> to jump links. Reduced motion respected.</p>
-      </div>
+    <div class="card">
+        <h3>Skills & Interests</h3>
+        <ul>
+            <li>Machine Learning & Deep Learning</li>
+            <li>Medical Imaging Research</li>
+            <li>Robotics & Engineering</li>
+            <li>STEM Leadership & Mentorship</li>
+            <li>Mental Health Advocacy</li>
+        </ul>
+    </div>
+</div>
 
-      <aside class="card" aria-label="profile card">
-        <div style="display:flex; gap:14px; align-items:center;">
-          <div class="avatar" aria-hidden="true">BA</div>
-          <div>
-            <div style="font-weight:700">Bhavesh Adivi</div>
-            <div class="meta">TJHSST ’28 — Machine Learning & Robotics</div>
-          </div>
-        </div>
+<footer>
+    © 2025 Bhavesh Adivi
+</footer>
 
-        <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
-          <div class="pill">ML</div>
-          <div class="pill">Medical Imaging</div>
-          <div class="pill">Robotics</div>
-        </div>
-
-        <div style="margin-top:auto; display:flex; gap:8px; align-items:center; justify-content:space-between;">
-          <div class="muted small">Based in Fairfax, VA</div>
-          <div style="display:flex; gap:8px; align-items:center;">
-            <a class="no-decor" href="#contact" title="Contact"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 8v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7 8V6a5 5 0 0 1 10 0v2" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></a>
-            <a class="no-decor" href="#" title="GitHub"><svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 .5A12 12 0 0 0 0 12.6c0 5.3 3.4 9.8 8.2 11.4.6.1.8-.3.8-.6v-2.1c-3.3.8-4-1.6-4-1.6-.6-1.6-1.6-2-1.6-2-1.3-.9.1-.9.1-.9 1.4.1 2.1 1.5 2.1 1.5 1.2 2 3.2 1.5 4 .1.1-.8.5-1.5.9-1.8-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.4 1.3-3.3-.1-.3-.6-1.6.1-3.4 0 0 1-.3 3.3 1.3a11 11 0 0 1 6 0c2.2-1.6 3.3-1.3 3.3-1.3.7 1.8.2 3.1.1 3.4.8.9 1.3 2 1.3 3.3 0 4.5-2.7 5.5-5.3 5.8.5.5.9 1.3.9 2.6v3.8c0 .3.2.7.8.6A12 12 0 0 0 12 .5z"/></svg></a>
-          </div>
-        </div>
-      </aside>
-    </header>
-
-    <main>
-      <section class="card-block reveal" id="about" aria-labelledby="about-title">
-        <h3 id="about-title">About</h3>
-        <p class="muted small" style="margin-top:8px">Quick summary</p>
-        <p style="margin-top:12px">I'm a student at Thomas Jefferson High School for Science and Technology (TJHSST), class of 2028. I focus on machine learning with a special interest in medical imaging and robotics. Outside of technical work, I mentor students in STEM and serve as a Fairfax Youth Mental Health Ambassador. I enjoy building small, well-documented projects — typically reproducible notebooks, demo UIs, and outreach materials.</p>
-
-        <div style="margin-top:14px" class="grid-2">
-          <div>
-            <h4 style="margin:0 0 8px 0">Skills</h4>
-            <ul style="margin:0; padding-left:18px; color:var(--muted)">
-              <li>Python — numpy, pandas, PyTorch / TensorFlow basics</li>
-              <li>Medical imaging workflows (DICOM, preprocessing)</li>
-              <li>Robotics fundamentals & hardware prototyping</li>
-              <li>Mentorship, leadership, public speaking</li>
-            </ul>
-          </div>
-          <div>
-            <h4 style="margin:0 0 8px 0">Tools & Platforms</h4>
-            <ul style="margin:0; padding-left:18px; color:var(--muted)">
-              <li>Git & GitHub — reproducible repos</li>
-              <li>Colab / Jupyter Notebooks</li>
-              <li>Open-source ML stacks & model interpretability tools</li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <aside style="display:flex; flex-direction:column; gap:12px;">
-        <section class="card-block reveal" id="contact" aria-labelledby="contact-title">
-          <h4 id="contact-title">Contact</h4>
-          <p class="muted small">Reach out — happy to collaborate or mentor.</p>
-          <div style="margin-top:12px; display:flex;flex-direction:column;gap:10px">
-            <a class="btn outline" href="mailto:your.email@example.com">Email: your.email@example.com</a>
-            <a class="btn" href="https://github.com/your-github" target="_blank" rel="noopener">GitHub profile</a>
-            <a class="btn outline" href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
-          </div>
-        </section>
-
-        <section class="card-block reveal" aria-labelledby="timeline-title">
-          <h4 id="timeline-title">Selected roles</h4>
-          <div class="timeline" style="margin-top:10px">
-            <div class="time-item">
-              <div class="time-dot" aria-hidden="true"></div>
-              <div class="time-content">
-                <h5>Fairfax Youth Mental Health Ambassador</h5>
-                <p class="muted small">Advocacy & outreach in Fairfax County schools.</p>
-              </div>
-            </div>
-
-            <div class="time-item">
-              <div class="time-dot" aria-hidden="true"></div>
-              <div class="time-content">
-                <h5>STEM Leader & Mentor — TJHSST</h5>
-                <p class="muted small">Workshops, tutoring, and student leadership roles.</p>
-              </div>
-            </div>
-
-            <div class="time-item">
-              <div class="time-dot" aria-hidden="true"></div>
-              <div class="time-content">
-                <h5>Robotics Projects</h5>
-                <p class="muted small">Hands-on building & code for small robot prototypes.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </aside>
-    </main>
-
-    <section style="margin-top:22px" class="card-block reveal" id="projects">
-      <h3>Projects & Work</h3>
-      <p class="muted small" style="margin-top:8px">A few highlights — link to repos in GitHub profile.</p>
-
-      <div class="projects" style="margin-top:12px">
-        <article class="project" tabindex="0" aria-labelledby="p1">
-          <div class="dot">M</div>
-          <div>
-            <h4 id="p1">Medical Imaging: Preprocessing pipeline</h4>
-            <p>Reusable DICOM → NIfTI pipeline with augmentation & lightweight model demo.</p>
-          </div>
-        </article>
-
-        <article class="project" tabindex="0" aria-labelledby="p2">
-          <div class="dot">R</div>
-          <div>
-            <h4 id="p2">Robotics: Object-tracking bot</h4>
-            <p>Small wheeled robot with camera + model for object centroid tracking & PID control.</p>
-          </div>
-        </article>
-
-        <article class="project" tabindex="0" aria-labelledby="p3">
-          <div class="dot">O</div>
-          <div>
-            <h4 id="p3">Outreach: Intro to ML workshops</h4>
-            <p>Curriculum and notebooks used in mentorship sessions at TJHSST.</p>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <footer>
-      <div>© <strong>Bhavesh Adivi</strong> — TJHSST ’28</div>
-      <div class="socials" aria-label="social links">
-        <a class="no-decor muted small" href="https://github.com/your-github" target="_blank" rel="noopener">GitHub</a>
-        <a class="no-decor muted small" href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">LinkedIn</a>
-        <a class="no-decor muted small" href="mailto:your.email@example.com">Email</a>
-      </div>
-    </footer>
-  </div>
-
-<script>
-  // Respect reduced motion preference
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  // Simple reveal-on-scroll for elements with .reveal
-  (function(){
-    const els = Array.from(document.querySelectorAll('.reveal'));
-    if(!els.length) return;
-    if(reduced){ els.forEach(e=> e.classList.add('visible')); return; }
-
-    const io = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry=>{
-        if(entry.isIntersecting){
-          entry.target.classList.add('visible');
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.06 });
-
-    els.forEach(el => io.observe(el));
-  })();
-
-  // Floating tilt effect for .project items (small, subtle)
-  (function(){
-    if(reduced) return;
-    document.querySelectorAll('.project').forEach(card=>{
-      card.addEventListener('mousemove', (e)=>{
-        const r = card.getBoundingClientRect();
-        const cx = r.left + r.width/2;
-        const cy = r.top + r.height/2;
-        const dx = (e.clientX - cx) / (r.width/2);
-        const dy = (e.clientY - cy) / (r.height/2);
-        const tiltX = (dy * 6);
-        const tiltY = (dx * -6);
-        card.style.transform = `perspective(700px) translateZ(0) rotateX(${tiltX}deg) rotateY(${tiltY}deg) translateY(-6px)`;
-      });
-      card.addEventListener('mouseleave', ()=> card.style.transform = 'translateY(0)');
-      // keyboard focus effect
-      card.addEventListener('focus', ()=> card.style.transform = 'translateY(-6px)');
-      card.addEventListener('blur', ()=> card.style.transform = 'translateY(0)');
-    });
-  })();
-
-  // Smooth-scroll for anchor links
-  (function(){
-    if('scrollBehavior' in document.documentElement.style){
-      document.querySelectorAll('a[href^="#"]').forEach(a=>{
-        a.addEventListener('click', (e)=>{
-          const t = document.querySelector(a.getAttribute('href'));
-          if(t){ e.preventDefault(); t.scrollIntoView({behavior:'smooth', block:'start'}); }
-        });
-      });
-    }
-  })();
-</script>
 </body>
 </html>
