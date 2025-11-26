@@ -50,7 +50,6 @@
             color: #3355ff;
         }
 
-        /* Sections */
         section {
             padding: 120px 20px 80px;
             max-width: 900px;
@@ -77,34 +76,15 @@
             }
         }
 
-        .typing {
-            width: fit-content;
-            white-space: nowrap;
-            border-right: 2px solid #3355ff;
-            overflow: hidden;
-            animation: typing 3s steps(30), cursor 0.6s step-end infinite alternate;
+        /* Typing animation cursor */
+        .typing-cursor {
+            border-right: 3px solid #3355ff;
+            animation: blink 0.8s infinite;
         }
 
-        @keyframes typing {
-            from { width: 0; }
-            to { width: 100%; }
-        }
-
-        @keyframes cursor {
-            50% { border-color: transparent; }
-        }
-
-        .project-card {
-            background: white;
-            padding: 18px;
-            border-radius: 12px;
-            margin: 16px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-            transition: transform 0.25s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-4px);
+        @keyframes blink {
+            0%, 50% { border-color: #3355ff; }
+            51%, 100% { border-color: transparent; }
         }
 
         footer {
@@ -128,91 +108,140 @@
         .btn:hover {
             background: #1f3fe0;
         }
+
+        .project-card {
+            background: white;
+            padding: 18px;
+            border-radius: 12px;
+            margin: 16px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+            transition: transform 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-4px);
+        }
     </style>
 </head>
 
 <body>
 
-    <!-- NAV BAR -->
-    <header>
-        <h1>Bhavesh Adivi</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+<header>
+    <h1>Bhavesh Adivi</h1>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-    <!-- HERO SECTION -->
-    <section id="hero" style="padding-top:160px;" class="fade-in">
-        <div class="typing" style="font-size: 30px; font-weight: 600;">
-            Hi, I'm Bhavesh Adivi.
-        </div>
-        <p style="max-width: 700px; margin-top: 20px; font-size: 18px; line-height: 1.6;">
-            I'm a student at <strong>TJHSST ('28)</strong> passionate about 
-            <strong>machine learning</strong>, <strong>medical imaging</strong>, 
-            robotics, and connecting STEM with meaningful impact. 
-            I enjoy working on self-driven passion projects, mentoring younger students, 
-            and contributing to mental health initiatives as a 
-            <strong>Fairfax Youth Mental Health Ambassador</strong>.
-        </p>
-        <a href="#contact" class="btn" style="margin-top: 20px;">Get in Touch</a>
-    </section>
+<!-- HERO SECTION -->
+<section id="hero" style="padding-top:160px;" class="fade-in">
+    <h1 style="font-size: 36px; margin-bottom: 10px;">Bhavesh Adivi</h1>
 
-    <!-- ABOUT -->
-    <section id="about" class="fade-in">
-        <h2>About Me</h2>
-        <p style="font-size: 17px; line-height: 1.7;">
-            I'm currently exploring the intersection of 
-            <strong>AI, healthcare, and engineering</strong>, especially how 
-            machine learning can help analyze medical imagery, understand 
-            human health, and support better diagnostics.  
-            <br><br>
-            Outside of academics, I’m involved in STEM leadership and mentorship, 
-            helping guide younger students through competitions and projects. 
-            I also participate in robotics, where I enjoy building systems that 
-            combine software, sensors, and mechanical design.
-            <br><br>
-            When I'm not coding or working on a project, I like learning new concepts 
-            in biology, creating small web tools, and collaborating on community initiatives.
-        </p>
-    </section>
+    <!-- Typing animation word -->
+    <div style="font-size: 30px; font-weight: 600; color: #3355ff; height: 42px;">
+        <span id="typed-word"></span><span class="typing-cursor"></span>
+    </div>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="fade-in">
-        <h2>Projects</h2>
+    <p style="max-width: 700px; margin-top: 20px; font-size: 18px; line-height: 1.6;">
+        I'm a student at <strong>TJHSST ('28)</strong> passionate about 
+        <strong>machine learning</strong>, <strong>medical imaging</strong>, 
+        robotics, and using technology for meaningful impact.  
+        I work on passion projects, mentor younger students in STEM, and serve as a 
+        <strong>Fairfax Youth Mental Health Ambassador</strong>.
+    </p>
 
-        <div class="project-card">
-            <h3>AI Medical Image Classifier</h3>
-            <p>A deep learning model experimenting with early-stage medical image classification (CT/MRI) using lightweight architectures.</p>
-        </div>
+    <a href="#contact" class="btn" style="margin-top: 20px;">Get in Touch</a>
+</section>
 
-        <div class="project-card">
-            <h3>Mental Health NLP Tool</h3>
-            <p>A text-analysis mini-tool using QLoRA-fine-tuned BERT to classify sentiment and wellness indicators.</p>
-        </div>
+<!-- ABOUT -->
+<section id="about" class="fade-in">
+    <h2>About Me</h2>
+    <p style="font-size: 17px; line-height: 1.7;">
+        I explore the intersection of <strong>AI, medicine, and engineering</strong>.  
+        My interests include medical imaging, applied ML, robotics, and computational biology.  
+        I enjoy creating self-driven projects, teaching and mentoring students, and contributing 
+        to mental health initiatives in my community.
+    </p>
+</section>
 
-        <div class="project-card">
-            <h3>Robotics Sensor Pipeline</h3>
-            <p>Small robotics prototype integrating computer vision, sensors, and microcontrollers for navigation tests.</p>
-        </div>
+<!-- PROJECTS -->
+<section id="projects" class="fade-in">
+    <h2>Projects</h2>
 
-    </section>
+    <div class="project-card">
+        <h3>AI Medical Image Classifier</h3>
+        <p>Deep learning experiments for MRI/CT-based early anomaly detection.</p>
+    </div>
 
-    <!-- CONTACT -->
-    <section id="contact" class="fade-in">
-        <h2>Contact</h2>
-        <p style="font-size: 17px; line-height: 1.6;">
-            Feel free to reach out if you want to collaborate, talk about AI, 
-            or just chat about cool projects!
-        </p>
+    <div class="project-card">
+        <h3>Mental Health NLP Tool</h3>
+        <p>QLoRA-fine-tuned BERT model analyzing sentiment + wellness indicators.</p>
+    </div>
 
-        <p><strong>Email:</strong> [your email here]</p>
-    </section>
+    <div class="project-card">
+        <h3>Robotics Sensor Pipeline</h3>
+        <p>Vision + sensor fusion system for autonomous movement experiments.</p>
+    </div>
 
-    <footer>
-        © 2025 Bhavesh Adivi
-    </footer>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="fade-in">
+    <h2>Contact</h2>
+    <p style="font-size: 17px; line-height: 1.6;">
+        Want to connect, collaborate, or talk about ideas?
+    </p>
+    <p><strong>Email:</strong> [your email here]</p>
+</section>
+
+<footer>
+    © 2025 Bhavesh Adivi
+</footer>
+
+<!-- TYPING SCRIPT -->
+<script>
+    const words = [
+        "Innovator",
+        "Collaborator",
+        "Researcher",
+        "ML Enthusiast",
+        "Passion for Medicine"
+    ];
+
+    let index = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+    const typed = document.getElementById("typed-word");
+
+    function typeEffect() {
+        const currentWord = words[index];
+
+        if (!isDeleting) {
+            typed.textContent = currentWord.substring(0, charIndex + 1);
+            charIndex++;
+
+            if (charIndex === currentWord.length) {
+                setTimeout(() => isDeleting = true, 2000); // wait before deleting
+            }
+
+        } else {
+            typed.textContent = currentWord.substring(0, charIndex - 1);
+            charIndex--;
+
+            if (charIndex === 0) {
+                isDeleting = false;
+                index = (index + 1) % words.length; // next word
+            }
+        }
+
+        const speed = isDeleting ? 60 : 80;
+        setTimeout(typeEffect, speed);
+    }
+
+    typeEffect();
+</script>
 
 </body>
 </html>
