@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bhavesh Adivi</title>
 
-
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -16,6 +15,7 @@
             color: #222;
             scroll-behavior: smooth;
         }
+
         header {
             position: fixed;
             top: 0;
@@ -74,7 +74,6 @@
                 transform: translateY(0);
             }
         }
-
 
         .typing-cursor {
             border-right: 3px solid #3355ff;
@@ -135,37 +134,43 @@
 </header>
 
 
+<!-- HERO -->
 <section id="hero" style="padding-top:160px;" class="fade-in">
     <h1 style="font-size: 36px; margin-bottom: 10px;">Bhavesh Adivi</h1>
-
 
     <div style="font-size: 30px; font-weight: 600; color: #3355ff; height: 42px;">
         <span id="typed-word"></span><span class="typing-cursor"></span>
     </div>
 
     <p style="max-width: 700px; margin-top: 20px; font-size: 18px; line-height: 1.6;">
-        I'm a student at <strong>TJHSST ('28)</strong> passionate about 
-        <strong>machine learning</strong>, <strong>medical imaging</strong>, 
-        robotics, and using technology for meaningful impact.  
-        I work on passion projects, mentor younger students in STEM, and serve as a 
-        <strong>Fairfax Youth Mental Health Ambassador</strong>.
+        I'm a TJHSST ‘28 student who loves exploring how <strong>machine learning</strong>, 
+        <strong>medicine</strong>, and <strong>engineering</strong> come together to solve real problems.  
+        Whether I'm experimenting with new ML models, digging into computational biology, building robotic systems, 
+        or mentoring younger students, I’m always looking for ways to learn, create, and collaborate.
+        I’m also passionate about supporting my community through youth mental health advocacy.
     </p>
 
     <a href="#contact" class="btn" style="margin-top: 20px;">Get in Touch</a>
 </section>
 
 
+<!-- ABOUT -->
 <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p style="font-size: 17px; line-height: 1.7;">
-        I explore the intersection of <strong>AI, medicine, and engineering</strong>.  
-        My interests include medical imaging, applied ML, robotics, and computational biology.  
-        I truly enjoy exploring self-driven projects, teaching and mentoring students, and contributing 
-        to mental health initiatives in my community through being a 2025 Fairfax County Youth Mental Health Ambassador.
+        I’m a curious builder who enjoys experimenting with ideas—especially when they connect 
+        <strong>AI, biology, and engineering</strong>.  
+        A lot of my work revolves around applying ML to medical or scientific problems, exploring robotics,  
+        and trying out computational approaches to understand biology in new ways.
+        <br><br>
+        I love sharing what I learn with others, mentoring students in STEM, and building projects that 
+        help me understand the world a little better each time. Collaboration motivates me, and I’m always excited 
+        to work with people who think creatively and push boundaries.
     </p>
 </section>
 
 
+<!-- PROJECTS (UNCHANGED) -->
 <section id="projects" class="fade-in">
     <h2>Projects</h2>
 
@@ -183,26 +188,26 @@
         <h3>Pangolin</h3>
         <p>An enhanced User-Interface for calling Large-Language-Models using the Streamlit Framework + ngrok in IPython</p>
     </div>
+
     <div class="project-card">
         <h3>Ionite: a cron + Vercel-based workflow to check for school club spots</h3>
         <p>Built in backend Python, Flask endpoint hosted by Vercel, and pinged by cron. Checks periodically if a club spot is available for a specific date through my school's intranet (ION v3) API</p>
     </div>
-    
-
 </section>
 
 
+<!-- CONTACT -->
 <section id="contact" class="fade-in">
     <h2>Contact</h2>
     <p style="font-size: 17px; line-height: 1.6;">
         Want to connect, collaborate, or talk about ideas?
     </p>
-    <p><strong>Email:</strong> 2028badivi@gmail.com</p>
+    <p><strong>Email:</strong> [your-email]@gmail.com</p>
 </section>
 
 <footer>
-    © 2025 Bhavesh Adivi
-    I built this page using template code and enhanced it with my own animations and stuff about me! 
+    © 2025 Bhavesh Adivi  
+    I built this page using template code and enhanced it with my own animations and features!
 </footer>
 
 
@@ -228,16 +233,15 @@
             charIndex++;
 
             if (charIndex === currentWord.length) {
-                setTimeout(() => isDeleting = true, 2000); // wait before deleting
+                setTimeout(() => isDeleting = true, 2000);
             }
-
         } else {
             typed.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
 
             if (charIndex === 0) {
                 isDeleting = false;
-                index = (index + 1) % words.length; // next word
+                index = (index + 1) % words.length;
             }
         }
 
