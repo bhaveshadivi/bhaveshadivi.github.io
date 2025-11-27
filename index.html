@@ -16,143 +16,169 @@
             scroll-behavior: smooth;
         }
 
+        /* HEADER */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            background: #ffffffee;
+            background: #ffffffdd;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid #e0e0e0;
-            padding: 12px 20px;
+            padding: 14px 26px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
         }
-
         header h1 {
             margin: 0;
             font-size: 20px;
             font-weight: 600;
             color: #3355ff;
         }
-
         nav a {
-            margin-left: 18px;
+            margin-left: 20px;
             text-decoration: none;
             color: #333;
             font-weight: 500;
             transition: color 0.25s;
         }
-
         nav a:hover {
             color: #3355ff;
         }
 
+        /* SECTION BASE STYLE */
         section {
-            padding: 120px 20px 80px;
+            padding: 120px 20px 90px;
             max-width: 900px;
             margin: auto;
         }
-
         h2 {
             font-size: 32px;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             color: #3355ff;
         }
 
+        /* FADE-IN ANIMATION */
         .fade-in {
             opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease-out;
+            transform: translateY(20px);
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .show {
-            opacity: 1 !important;
-            transform: translateY(0) !important;
-        }
-
+        /* TYPING CURSOR */
         .typing-cursor {
             border-right: 3px solid #3355ff;
             animation: blink 0.8s infinite;
         }
-
         @keyframes blink {
             0%, 50% { border-color: #3355ff; }
             51%, 100% { border-color: transparent; }
         }
 
+        /* BUTTON */
         .btn {
             display: inline-block;
-            padding: 10px 18px;
+            padding: 12px 20px;
             background: #3355ff;
             color: white;
             border-radius: 8px;
             text-decoration: none;
             transition: background 0.25s;
         }
-
         .btn:hover {
             background: #1f3fe0;
         }
 
+        /* PROJECT CARDS */
         .project-card {
             background: white;
-            padding: 18px;
+            padding: 20px;
             border-radius: 12px;
             margin: 16px 0;
             box-shadow: 0 3px 10px rgba(0,0,0,0.06);
             transition: transform 0.25s;
         }
-
         .project-card:hover {
             transform: translateY(-4px);
         }
 
-        /* Floating animation for icons/cards */
-        .float {
-            animation: float 4s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-6px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .card {
+        /* FANCY BOX (used for awards + goals) */
+        .fancy-box {
             background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 16px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+            padding: 22px 28px;
+            border-radius: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border: 1px solid #e6e9f2;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .fancy-box:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 28px rgba(0,0,0,0.10);
         }
 
-        .timeline {
-            border-left: 3px solid #3355ff;
-            padding-left: 20px;
+        /* LIST WITH BLUE DIAMONDS */
+        .styled-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        .styled-list li {
+            margin-bottom: 10px;
+            padding-left: 28px;
+            position: relative;
+            font-size: 17px;
+        }
+        .styled-list li::before {
+            content: "◆";
+            color: #3355ff;
+            position: absolute;
+            left: 0;
+            font-size: 14px;
         }
 
-        .timeline-item {
+        /* INTEREST TAGS */
+        .tag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-top: 20px;
+        }
+        .tag {
+            background: linear-gradient(135deg, #3355ff, #5f7bff);
+            color: white;
+            padding: 10px 14px;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 500;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .tag:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 16px rgba(0,0,0,0.12);
+        }
+
+        /* FUTURE GOALS TEXT */
+        .goal-text {
+            font-size: 17px;
+            line-height: 1.7;
             margin-bottom: 20px;
         }
 
-        .divider {
-            width: 90%;
-            margin: 50px auto;
-            height: 1px;
-            background: #d7d7d7;
-        }
-
+        /* FOOTER */
         footer {
             background: #fff;
             text-align: center;
             padding: 30px;
-            margin-top: 40px;
+            margin-top: 60px;
             border-top: 1px solid #e0e0e0;
+            color: #666;
         }
-
     </style>
 </head>
 
@@ -161,24 +187,22 @@
 <header>
     <h1>Bhavesh Adivi</h1>
     <nav>
+        <a href="#hero">Home</a>
         <a href="#about">About</a>
-        <a href="#interests">Interests</a>
-        <a href="#awards">Awards</a>
-        <a href="#goals">Goals</a>
         <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#interests">Interests</a>
+        <a href="#goals">Goals</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
-
 
 <!-- HERO -->
 <section id="hero" style="padding-top:160px;" class="fade-in">
     <h1 style="font-size: 36px; margin-bottom: 10px;">Bhavesh Adivi<span style="color:#3355ff;">.</span></h1>
 
     <div style="font-size: 30px; font-weight: 600; height: 42px;">
-        <span style="color: #222;">I'm an </span>
-        <span id="typed-word" style="color:#3355ff;"></span>
-        <span class="typing-cursor"></span>
+        <span style="color:black;">I'm an </span><span id="typed-word" style="color:#3355ff;"></span><span class="typing-cursor"></span>
     </div>
 
     <p style="max-width: 700px; margin-top: 20px; font-size: 18px; line-height: 1.6;">
@@ -192,11 +216,7 @@
     <a href="#contact" class="btn" style="margin-top: 20px;">Get in Touch</a>
 </section>
 
-
-<div class="divider"></div>
-
-
-<!-- ABOUT (unchanged) -->
+<!-- ABOUT -->
 <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p style="font-size: 17px; line-height: 1.7;">
@@ -211,92 +231,86 @@
     </p>
 </section>
 
-
-<div class="divider"></div>
-
-
-<!-- INTERESTS -->
-<section id="interests" class="fade-in">
-    <h2>Interests</h2>
-    <div class="card float">
-        <ul style="font-size: 17px; line-height: 1.7;">
-            <li>Machine learning for medicine</li>
-            <li>Biomedical engineering + diagnostics</li>
-            <li>Robotics and embedded systems</li>
-            <li>Computational biology + bioinformatics</li>
-            <li>Mental health advocacy and student mentorship</li>
-            <li>Human-centered technology & problem solving</li>
-        </ul>
-    </div>
-</section>
-
-
-<div class="divider"></div>
-
-
-<!-- AWARDS / HONORS -->
-<section id="awards" class="fade-in">
-    <h2>Honors & Awards</h2>
-    <div class="card">
-        <ul style="line-height: 1.7; font-size: 17px;">
-            <li>Fairfax Youth Mental Health Ambassador (2024–2025)</li>
-            <li>STEM mentorship involvement & leadership roles</li>
-            <li>Recognized for robotics leadership and peer teaching</li>
-            <li>Various academic distinctions + STEM competition involvement</li>
-        </ul>
-    </div>
-</section>
-
-
-<div class="divider"></div>
-
-
-<!-- FUTURE GOALS -->
-<section id="goals" class="fade-in">
-    <h2>Future Goals</h2>
-    <div class="card">
-        <p style="font-size: 17px; line-height: 1.7;">
-            I hope to continue exploring the intersections of AI and medicine — particularly in diagnostic tools, 
-            computational biology, and medical imaging.  
-            <br><br>
-            Long term, I aim to contribute to biomedical innovation, work on impactful ML research, 
-            and keep mentoring younger students in STEM to help them find their passions.
-        </p>
-    </div>
-</section>
-
-
-<div class="divider"></div>
-
-
-<!-- PROJECTS (unchanged) -->
+<!-- PROJECTS -->
 <section id="projects" class="fade-in">
     <h2>My Projects</h2>
 
     <div class="project-card">
-        <h3>MelanoScan: A Cutting Edge Diagnostic Tool for Early Melanoma Detection</h3>
-        <p>An Python ML + Enzyme Kinetics-based Experimental Dual-System (Arduino & C++) that is meant to analyze the suspected lesion microenvironment for KLK14 Protease and CDSN metabolic ratios and alignment with key superficial features as per the visual ABCDE framework for detecting metastatic Melanoma</p>
+        <h3>MelanoScan: A Diagnostic Tool for Early Melanoma Detection</h3>
+        <p>Python ML + enzyme kinetics dual-system designed to assess the lesion microenvironment and classify melanoma risk.</p>
     </div>
 
     <div class="project-card">
-        <h3>DistilMind: a Mental Health NLP Model for Enhanced Sentiment Analysis (Tensorflow)</h3>
-        <p>QLoRA-fine-tuned BERT model analyzing sentiment + wellness indicators for potential mental health risks (purely experimental)</p>
+        <h3>DistilMind: Mental Health NLP Model</h3>
+        <p>QLoRA-fine-tuned BERT for sentiment + wellness indicators. Fully experimental project.</p>
     </div>
 
     <div class="project-card">
-        <h3>Pangolin: LLMs + HTTP requests + UI/UX</h3>
-        <p>An enhanced User-Interface for calling Large-Language-Models using the Streamlit Framework + ngrok in IPython</p>
+        <h3>Pangolin: LLMs + HTTP + UI</h3>
+        <p>Streamlit interface using ngrok for remote access to advanced language model features.</p>
     </div>
 
     <div class="project-card">
-        <h3>Ionite: a cron + Vercel-based workflow to check for school club spots</h3>
-        <p>Built in backend Python, Flask endpoint hosted by Vercel, and pinged by cron. Checks periodically if a club spot is available for a specific date through my school's intranet (ION v3) API</p>
+        <h3>Ionite: Club Spot Checker</h3>
+        <p>Python backend with Flask + Vercel + cron to auto-check availability for school activities.</p>
     </div>
 </section>
 
+<!-- AWARDS -->
+<section id="awards" class="fade-in">
+    <h2>Honors & Awards</h2>
+    <div class="fancy-box">
+        <ul class="styled-list">
+            <li>Gold Presidential Volunteer Service Award</li>
+            <li>Destination Imagination – Global, State, and City Awards</li>
+            <li>FIRST Tech Challenge Regional Winner</li>
+            <li>TSA States Top Rankings in Biomedical Engineering & Innovation</li>
+            <li>UIL “5” Violin Superior Ratings</li>
+            <li>National & County Chess Champion</li>
+        </ul>
+    </div>
+</section>
 
-<div class="divider"></div>
+<!-- INTERESTS -->
+<section id="interests" class="fade-in">
+    <h2>Interests</h2>
 
+    <div class="tag-grid">
+        <span class="tag">Machine Learning</span>
+        <span class="tag">Biomedical Engineering</span>
+        <span class="tag">Medical Imaging</span>
+        <span class="tag">Computational Medicine</span>
+        <span class="tag">Robotics</span>
+        <span class="tag">AI Safety</span>
+        <span class="tag">Microbiology</span>
+        <span class="tag">Youth Mental Health Advocacy</span>
+        <span class="tag">STEM Mentorship</span>
+        <span class="tag">Applied Mathematics</span>
+    </div>
+</section>
+
+<!-- FUTURE GOALS -->
+<section id="goals" class="fade-in">
+    <h2>Future Goals</h2>
+
+    <div class="fancy-box">
+        <p class="goal-text">
+            Over the next few years, I aim to grow as a researcher, creator, and collaborator.  
+            I hope to continue exploring intersections of AI and biomedical science—especially where 
+            computational tools can improve diagnostics, disease understanding, and healthcare.
+            <br><br>
+            Long-term, I’m working toward contributing to breakthroughs in:
+        </p>
+
+        <ul class="styled-list">
+            <li>AI-driven clinical diagnostics</li>
+            <li>ML models for biological + medical systems</li>
+            <li>Biomedical engineering research</li>
+            <li>Neurotechnology & computational neuroscience</li>
+            <li>Human-centered mental health technologies</li>
+        </ul>
+    </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact" class="fade-in">
@@ -310,19 +324,16 @@
 </section>
 
 <footer>
-    © 2025 Bhavesh Adivi<br>
-    I built this page using template code and enhanced it with my own animations and features!
+    © 2025 Bhavesh Adivi — I built this site and enhanced it with my own animations and UI design!
 </footer>
 
-
 <script>
-    /* Typing Animation */
     const words = [
         "Innovator",
         "Collaborator",
-        "Learner",
+        "Researcher",
         "ML Enthusiast",
-        "Aspiring Biomedical Researcher"
+        "Passionate About Medicine"
     ];
 
     let index = 0;
@@ -336,14 +347,12 @@
         if (!isDeleting) {
             typed.textContent = currentWord.substring(0, charIndex + 1);
             charIndex++;
-
             if (charIndex === currentWord.length) {
                 setTimeout(() => isDeleting = true, 2000);
             }
         } else {
             typed.textContent = currentWord.substring(0, charIndex - 1);
             charIndex--;
-
             if (charIndex === 0) {
                 isDeleting = false;
                 index = (index + 1) % words.length;
@@ -355,22 +364,6 @@
     }
 
     typeEffect();
-
-
-    /* Scroll Reveal Animation */
-    const fadeElements = document.querySelectorAll(".fade-in");
-
-    function revealOnScroll() {
-        fadeElements.forEach(el => {
-            const rect = el.getBoundingClientRect();
-            if (rect.top < window.innerHeight - 100) {
-                el.classList.add("show");
-            }
-        });
-    }
-
-    window.addEventListener("scroll", revealOnScroll);
-    revealOnScroll();
 </script>
 
 </body>
