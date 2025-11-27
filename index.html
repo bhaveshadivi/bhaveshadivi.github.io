@@ -3,368 +3,156 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhavesh Adivi</title>
+    <title>Bhavesh Adivi<span style='color:#7ab6ff;'>.</span></title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            margin: 0;
-            font-family: "Inter", sans-serif;
-            background: #f7f9fc;
-            color: #222;
-            scroll-behavior: smooth;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+        body { background: #0f0f0f; color: white; line-height: 1.6; }
+        h1, h2, h3 { font-weight: 700; }
 
-        /* HEADER */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: #ffffffdd;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e0e0e0;
-            padding: 14px 26px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 1000;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 20px;
-            font-weight: 600;
-            color: #3355ff;
-        }
-        nav a {
-            margin-left: 20px;
-            text-decoration: none;
-            color: #333;
-            font-weight: 500;
-            transition: color 0.25s;
-        }
-        nav a:hover {
-            color: #3355ff;
-        }
+        nav { width: 100%; padding: 25px 50px; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(12px); z-index: 999; display: flex; justify-content: space-between; align-items: center; }
+        nav a { color: white; margin-left: 25px; text-decoration: none; font-size: 17px; transition: 0.3s; }
+        nav a:hover { color: #7ab6ff; }
 
-        /* SECTION BASE STYLE */
-        section {
-            padding: 120px 20px 90px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            font-size: 32px;
-            font-weight: 600;
-            margin-bottom: 14px;
-            color: #3355ff;
-        }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-left: 60px; background: linear-gradient(135deg, #001220, #000000); }
+        .hero h1 { font-size: 60px; }
+        .hero p { font-size: 22px; margin-top: 15px; max-width: 600px; opacity: 0.85; }
+        .hero .cta { margin-top: 40px; }
+        .btn { display: inline-block; padding: 15px 28px; border-radius: 10px; text-decoration: none; font-size: 18px; background: #1659e8; color: white; transition: 0.3s; }
+        .btn:hover { background: #2e72ff; }
 
-        /* FADE-IN ANIMATION */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
+        section { padding: 120px 70px; }
+        .section-title { font-size: 38px; margin-bottom: 35px; color: #7ab6ff; }
 
-        /* TYPING CURSOR */
-        .typing-cursor {
-            border-right: 3px solid #3355ff;
-            animation: blink 0.8s infinite;
-        }
-        @keyframes blink {
-            0%, 50% { border-color: #3355ff; }
-            51%, 100% { border-color: transparent; }
-        }
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+        .project { background: #141414; padding: 25px; border-radius: 12px; transition: 0.35s; border: 1px solid #1f1f1f; }
+        .project:hover { transform: translateY(-6px); border-color: #2a63ff; }
 
-        /* BUTTON */
-        .btn {
-            display: inline-block;
-            padding: 12px 20px;
-            background: #3355ff;
-            color: white;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.25s;
-        }
-        .btn:hover {
-            background: #1f3fe0;
-        }
+        #awards, #interests { background: radial-gradient(circle at top, #0d1a33, #000); padding-top: 130px; padding-bottom: 130px; }
+        .award-card, .interest-card { background: #151515; border: 1px solid #262626; padding: 24px; border-radius: 14px; margin-bottom: 20px; transition: 0.3s; }
+        .award-card:hover, .interest-card:hover { transform: translateX(6px); border-color: #4f8bff; }
+        .award-title, .interest-title { font-size: 21px; margin-bottom: 7px; color: #a9c9ff; }
+        .award-desc, .interest-desc { opacity: 0.75; }
 
-        /* PROJECT CARDS */
-        .project-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            margin: 16px 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
-            transition: transform 0.25s;
-        }
-        .project-card:hover {
-            transform: translateY(-4px);
-        }
+        #goals { background: #0a0a0a; padding-top: 130px; padding-bottom: 130px; }
+        .goal-list { margin-top: 20px; }
+        .goal-list li { margin-bottom: 12px; font-size: 18px; opacity: 0.85; }
 
-        /* FANCY BOX (used for awards + goals) */
-        .fancy-box {
-            background: white;
-            padding: 22px 28px;
-            border-radius: 14px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border: 1px solid #e6e9f2;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .fancy-box:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 6px 28px rgba(0,0,0,0.10);
-        }
+        #contact { background: #050505; padding-bottom: 160px; }
+        footer { text-align: center; padding: 40px; opacity: 0.6; }
 
-        /* LIST WITH BLUE DIAMONDS */
-        .styled-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        .styled-list li {
-            margin-bottom: 10px;
-            padding-left: 28px;
-            position: relative;
-            font-size: 17px;
-        }
-        .styled-list li::before {
-            content: "◆";
-            color: #3355ff;
-            position: absolute;
-            left: 0;
-            font-size: 14px;
-        }
-
-        /* INTEREST TAGS */
-        .tag-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-top: 20px;
-        }
-        .tag {
-            background: linear-gradient(135deg, #3355ff, #5f7bff);
-            color: white;
-            padding: 10px 14px;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 15px;
-            font-weight: 500;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-        .tag:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 5px 16px rgba(0,0,0,0.12);
-        }
-
-        /* FUTURE GOALS TEXT */
-        .goal-text {
-            font-size: 17px;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        /* FOOTER */
-        footer {
-            background: #fff;
-            text-align: center;
-            padding: 30px;
-            margin-top: 60px;
-            border-top: 1px solid #e0e0e0;
-            color: #666;
-        }
+        .typing-cursor { border-right: 3px solid #7ab6ff; animation: blink 0.8s infinite; }
+        @keyframes blink { 0%,50% { border-color: #7ab6ff; } 51%,100% { border-color: transparent; } }
     </style>
 </head>
 
 <body>
 
-<header>
-    <h1>Bhavesh Adivi</h1>
     <nav>
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#awards">Awards</a>
-        <a href="#interests">Interests</a>
-        <a href="#goals">Goals</a>
-        <a href="#contact">Contact</a>
+        <h2 style="font-size: 22px; color:#7ab6ff;">Bhavesh Adivi<span style='color:#7ab6ff;'></span></h2>
+        <div>
+            <a href="#home">Home</a>
+            <a href="#projects">Projects</a>
+            <a href="#awards">Awards</a>
+            <a href="#interests">Interests</a>
+            <a href="#contact">Contact</a>
+        </div>
     </nav>
-</header>
 
-<!-- HERO -->
-<section id="hero" style="padding-top:160px;" class="fade-in">
-    <h1 style="font-size: 36px; margin-bottom: 10px;">Bhavesh Adivi<span style="color:#3355ff;">.</span></h1>
+    <section class="hero" id="home">
+        <h1>Hi, I’m Bhavesh<span class="blue-char">.</span></h1>
+        <div style="font-size:28px; font-weight:600; margin-top:10px;">
+            <span></span><span id="typed-word" style="color:#7ab6ff;"></span><span class="typing-cursor"></span>
+        </div>
+        <p>A TJHSST '28 student exploring how <strong>machine learning</strong>, <strong>medicine</strong>, and <strong>engineering</strong> intersect to solve real-world problems. I build ML models, experiment with biomedical computation, and mentor younger students in designing robotics systems.</p>
+        <div class="cta"><a href="#interests" class="btn">View My Interests & Goals</a></div>
+    </section>
 
-    <div style="font-size: 30px; font-weight: 600; height: 42px;">
-        <span style="color:black;"></span><span id="typed-word" style="color:#3355ff;"></span><span class="typing-cursor"></span>
-    </div>
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid">
+            <div class="project">
+                <h3>MelanoScan: A Diagnostic Tool for Early Melanoma Detection</h3>
+                <p>Python ML + enzyme kinetics dual-system designed to assess the lesion microenvironment and classify melanoma risk.</p>
+            </div>
+            <div class="project">
+                <h3>DistilMind: Mental Health NLP Model</h3>
+                <p>QLoRA-fine-tuned BERT for sentiment and wellness indicators. Fully experimental project.</p>
+            </div>
+            <div class="project">
+                <h3>Pangolin: LLMs + HTTP + UI</h3>
+                <p>Streamlit interface using ngrok for remote access to advanced language model features.</p>
+            </div>
+            <div class="project">
+                <h3>Ionite: Club Spot Checker</h3>
+                <p>Python backend with Flask + Vercel + cron to auto-check availability for school activities.</p>
+            </div>
+        </div>
+    </section>
 
-    <p style="max-width: 700px; margin-top: 20px; font-size: 18px; line-height: 1.6;">
-        I'm a TJHSST ‘28 student who loves exploring how <strong>machine learning</strong>, 
-        <strong>medicine</strong>, and <strong>engineering</strong> come together to solve real problems.  
-        Whether I'm experimenting with new ML models, digging into computational biology, building robotic systems, 
-        or mentoring younger students, I’m always looking for ways to learn, create, and collaborate.
-        I’m also passionate about supporting my community through youth mental health advocacy and robotics mentorship.
-    </p>
+    <section id="awards">
+        <h2 class="section-title">Awards & Honors</h2>
+        <div class="award-card">
+            <h3 class="award-title">Gold Presidential Volunteer Service Award</h3>
+            <p class="award-desc">Awarded for extensive volunteer service and community impact.</p>
+        </div>
+        <div class="award-card">
+            <h3 class="award-title">Destination Imagination</h3>
+            <p class="award-desc">Global, State, and City level awards for innovative solutions in challenges.</p>
+        </div>
+        <div class="award-card">
+            <h3 class="award-title">FIRST Tech Challenge Regional Winner</h3>
+            <p class="award-desc">Recognized for outstanding robotics design and competition success.</p>
+        </div>
+    </section>
 
-    <a href="#contact" class="btn" style="margin-top: 20px;">Get in Touch</a>
-</section>
+    <section id="interests">
+        <h2 class="section-title">Interests & Future Goals</h2>
+        <div class="interest-card">
+            <h3 class="interest-title">Research Interests</h3>
+            <p class="interest-desc">AI in biomedical systems, computational immunology, mental health modeling, robotics, and sustainable engineering solutions.</p>
+        </div>
+        <div class="interest-card">
+            <h3 class="interest-title">Future Goals</h3>
+            <ul class="goal-list">
+                <li>Advance machine learning applications for healthcare diagnostics.</li>
+                <li>Integrate computational biology with real-world clinical solutions.</li>
+                <li>Contribute to AI-driven mental health research platforms.</li>
+                <li>Mentor young students in STEM and computational research.</li>
+            </ul>
+        </div>
+    </section>
 
-<!-- ABOUT -->
-<section id="about" class="fade-in">
-    <h2>About Me</h2>
-    <p style="font-size: 17px; line-height: 1.7;">
-        I’m a curious builder who enjoys experimenting with ideas—especially when they connect 
-        <strong>AI, biology, and engineering</strong>.  
-        A lot of my work revolves around applying ML to medical or scientific problems, exploring robotics,  
-        and trying out computational approaches to understand biology in new ways.
-        <br><br>
-        I love sharing what I learn with others, mentoring students in STEM, and building projects that 
-        help me understand the world a little better each time. Collaboration motivates me, and I’m always excited 
-        to work with people who think creatively and push boundaries.
-    </p>
-</section>
+    <section id="contact">
+        <h2 class="section-title">Contact</h2>
+        <p>Email: <strong>2028badivi@tjhsst.edu</strong></p>
+        <p>LinkedIn: <strong>www.linkedin.com/in/bhavesh-adivi-a50a93376</strong></p>
+        <p>GitHub: <strong>github.com/2028badivi</strong></p>
+    </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="fade-in">
-    <h2>My Projects</h2>
+    <footer>© 2025 Bhavesh Adivi — All Rights Reserved</footer>
 
-    <div class="project-card">
-        <h3>MelanoScan: A Diagnostic Tool for Early Melanoma Detection</h3>
-        <p>Python ML + enzyme kinetics dual-system designed to assess the lesion microenvironment and classify melanoma risk.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>DistilMind: Mental Health NLP Model</h3>
-        <p>QLoRA-fine-tuned BERT for sentiment + wellness indicators. Fully experimental project.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Pangolin: LLMs + HTTP + UI</h3>
-        <p>Streamlit interface using ngrok for remote access to advanced language model features.</p>
-    </div>
-
-    <div class="project-card">
-        <h3>Ionite: Club Spot Checker</h3>
-        <p>Python backend with Flask + Vercel + cron to auto-check availability for school activities.</p>
-    </div>
-</section>
-
-<!-- AWARDS -->
-<section id="awards" class="fade-in">
-    <h2>Honors & Awards</h2>
-    <div class="fancy-box">
-        <ul class="styled-list">
-            <li>Gold Presidential Volunteer Service Award</li>
-            <li>Destination Imagination – Global, State, and City Awards</li>
-            <li>FIRST Tech Challenge Regional Winner</li>
-            <li>TSA States Top Rankings in Biomedical Engineering & Innovation</li>
-            <li>UIL “5” Violin Superior Ratings</li>
-            <li>National & County Chess Champion</li>
-        </ul>
-    </div>
-</section>
-
-<!-- INTERESTS -->
-<section id="interests" class="fade-in">
-    <h2>Interests</h2>
-
-    <div class="tag-grid">
-        <span class="tag">Machine Learning</span>
-        <span class="tag">Biomedical Engineering</span>
-        <span class="tag">Medical Imaging</span>
-        <span class="tag">Computational Medicine</span>
-        <span class="tag">Robotics</span>
-        <span class="tag">AI Safety</span>
-        <span class="tag">Microbiology</span>
-        <span class="tag">Youth Mental Health Advocacy</span>
-        <span class="tag">STEM Mentorship</span>
-        <span class="tag">Applied Mathematics</span>
-    </div>
-</section>
-
-<!-- FUTURE GOALS -->
-<section id="goals" class="fade-in">
-    <h2>Future Goals</h2>
-
-    <div class="fancy-box">
-        <p class="goal-text">
-            Over the next few years, I aim to grow as a researcher, creator, and collaborator.  
-            I hope to continue exploring intersections of AI and biomedical science—especially where 
-            computational tools can improve diagnostics, disease understanding, and healthcare.
-            <br><br>
-            Long-term, I’m working toward contributing to breakthroughs in:
-        </p>
-
-        <ul class="styled-list">
-            <li>AI-driven clinical diagnostics</li>
-            <li>ML models for biological + medical systems</li>
-            <li>Biomedical engineering research</li>
-            <li>Neurotechnology & computational neuroscience</li>
-            <li>Human-centered mental health technologies</li>
-        </ul>
-    </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="fade-in">
-    <h2>Get in touch</h2>
-    <p style="font-size: 17px; line-height: 1.6;">
-        Want to connect, collaborate, or talk about ideas?
-    </p>
-    <p><strong>Email:</strong> 2028badivi@tjhsst.edu</p>
-    <p><strong>Github:</strong> github.com/2028badivi</p>
-    <p><strong>LinkedIn:</strong> www.linkedin.com/in/bhavesh-adivi-a50a93376</p>
-</section>
-
-<footer>
-    © 2025 Bhavesh Adivi — I built this site and enhanced it with my own animations and UI design!
-</footer>
-
-<script>
-    const words = [
-        "Innovator",
-        "Collaborator",
-        "Researcher",
-        "ML Enthusiast",
-        "Passionate About Medicine"
-    ];
-
-    let index = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    const typed = document.getElementById("typed-word");
-
-    function typeEffect() {
-        const currentWord = words[index];
-
-        if (!isDeleting) {
-            typed.textContent = currentWord.substring(0, charIndex + 1);
-            charIndex++;
-            if (charIndex === currentWord.length) {
-                setTimeout(() => isDeleting = true, 2000);
+    <script>
+        const words = ["Innovator", "Collaborator", "Researcher", "ML Enthusiast", "Passionate About Medicine"];
+        let i = 0, j = 0, isDeleting = false;
+        const typed = document.getElementById('typed-word');
+        function typeEffect() {
+            const currentWord = words[i];
+            if (!isDeleting) {
+                typed.textContent = currentWord.substring(0, j+1);
+                j++;
+                if (j === currentWord.length) { setTimeout(()=>isDeleting=true,2000); }
+            } else {
+                typed.textContent = currentWord.substring(0, j-1);
+                j--;
+                if (j === 0) { isDeleting=false; i=(i+1)%words.length; }
             }
-        } else {
-            typed.textContent = currentWord.substring(0, charIndex - 1);
-            charIndex--;
-            if (charIndex === 0) {
-                isDeleting = false;
-                index = (index + 1) % words.length;
-            }
+            setTimeout(typeEffect, isDeleting ? 60 : 80);
         }
-
-        const speed = isDeleting ? 60 : 80;
-        setTimeout(typeEffect, speed);
-    }
-
-    typeEffect();
-</script>
+        typeEffect();
+    </script>
 
 </body>
 </html>
