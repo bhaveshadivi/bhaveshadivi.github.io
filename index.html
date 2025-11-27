@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhavesh Adivi<span style='color:#7ab6ff;'>.</span></title>
+    <title>Bhavesh Adivi</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -62,7 +62,7 @@
     </nav>
 
     <section class="hero" id="home">
-        <h1>Hi, I’m Bhavesh<span class="blue-char">.</span></h1>
+        <h1>Hi, I’m Bhavesh<span style='color:#7ab6ff;'>.</span></h1>
         <div style="font-size:28px; font-weight:600; margin-top:10px;">
             <span></span><span id="typed-word" style="color:#7ab6ff;"></span><span class="typing-cursor"></span>
         </div>
@@ -149,7 +149,7 @@
                 j--;
                 if (j === 0) { isDeleting=false; i=(i+1)%words.length; }
             }
-            setTimeout(typeEffect, isDeleting ? 10 : 20);
+            setTimeout(typeEffect, isDeleting ? 40 : 60);
         }
         typeEffect();
     </script>
