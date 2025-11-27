@@ -64,15 +64,13 @@
 
         .fade-in {
             opacity: 0;
-            transform: translateY(20px);
-            animation: fadeIn 0.8s ease-out forwards;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
         }
 
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .show {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
         }
 
         .typing-cursor {
@@ -83,14 +81,6 @@
         @keyframes blink {
             0%, 50% { border-color: #3355ff; }
             51%, 100% { border-color: transparent; }
-        }
-
-        footer {
-            background: #fff;
-            text-align: center;
-            padding: 30px;
-            margin-top: 40px;
-            border-top: 1px solid #e0e0e0;
         }
 
         .btn {
@@ -119,6 +109,50 @@
         .project-card:hover {
             transform: translateY(-4px);
         }
+
+        /* Floating animation for icons/cards */
+        .float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin: 16px 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        }
+
+        .timeline {
+            border-left: 3px solid #3355ff;
+            padding-left: 20px;
+        }
+
+        .timeline-item {
+            margin-bottom: 20px;
+        }
+
+        .divider {
+            width: 90%;
+            margin: 50px auto;
+            height: 1px;
+            background: #d7d7d7;
+        }
+
+        footer {
+            background: #fff;
+            text-align: center;
+            padding: 30px;
+            margin-top: 40px;
+            border-top: 1px solid #e0e0e0;
+        }
+
     </style>
 </head>
 
@@ -128,10 +162,11 @@
     <h1>Bhavesh Adivi</h1>
     <nav>
         <a href="#about">About</a>
+        <a href="#interests">Interests</a>
+        <a href="#awards">Awards</a>
+        <a href="#goals">Goals</a>
         <a href="#projects">Projects</a>
-        <!-- <a href="#projects">What I'm doing right now</a> -->
         <a href="#contact">Contact</a>
-        
     </nav>
 </header>
 
@@ -141,10 +176,10 @@
     <h1 style="font-size: 36px; margin-bottom: 10px;">Bhavesh Adivi<span style="color:#3355ff;">.</span></h1>
 
     <div style="font-size: 30px; font-weight: 600; height: 42px;">
-        <span style="color: #222;"></span><span id="typed-word" style="color:#3355ff;"></span><span class="typing-cursor"></span>
+        <span style="color: #222;">I'm an </span>
+        <span id="typed-word" style="color:#3355ff;"></span>
+        <span class="typing-cursor"></span>
     </div>
-
-
 
     <p style="max-width: 700px; margin-top: 20px; font-size: 18px; line-height: 1.6;">
         I'm a TJHSST ‘28 student who loves exploring how <strong>machine learning</strong>, 
@@ -158,7 +193,10 @@
 </section>
 
 
-<!-- ABOUT -->
+<div class="divider"></div>
+
+
+<!-- ABOUT (unchanged) -->
 <section id="about" class="fade-in">
     <h2>About Me</h2>
     <p style="font-size: 17px; line-height: 1.7;">
@@ -174,7 +212,64 @@
 </section>
 
 
-<!-- PROJECTS (UNCHANGED) -->
+<div class="divider"></div>
+
+
+<!-- INTERESTS -->
+<section id="interests" class="fade-in">
+    <h2>Interests</h2>
+    <div class="card float">
+        <ul style="font-size: 17px; line-height: 1.7;">
+            <li>Machine learning for medicine</li>
+            <li>Biomedical engineering + diagnostics</li>
+            <li>Robotics and embedded systems</li>
+            <li>Computational biology + bioinformatics</li>
+            <li>Mental health advocacy and student mentorship</li>
+            <li>Human-centered technology & problem solving</li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- AWARDS / HONORS -->
+<section id="awards" class="fade-in">
+    <h2>Honors & Awards</h2>
+    <div class="card">
+        <ul style="line-height: 1.7; font-size: 17px;">
+            <li>Fairfax Youth Mental Health Ambassador (2024–2025)</li>
+            <li>STEM mentorship involvement & leadership roles</li>
+            <li>Recognized for robotics leadership and peer teaching</li>
+            <li>Various academic distinctions + STEM competition involvement</li>
+        </ul>
+    </div>
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- FUTURE GOALS -->
+<section id="goals" class="fade-in">
+    <h2>Future Goals</h2>
+    <div class="card">
+        <p style="font-size: 17px; line-height: 1.7;">
+            I hope to continue exploring the intersections of AI and medicine — particularly in diagnostic tools, 
+            computational biology, and medical imaging.  
+            <br><br>
+            Long term, I aim to contribute to biomedical innovation, work on impactful ML research, 
+            and keep mentoring younger students in STEM to help them find their passions.
+        </p>
+    </div>
+</section>
+
+
+<div class="divider"></div>
+
+
+<!-- PROJECTS (unchanged) -->
 <section id="projects" class="fade-in">
     <h2>My Projects</h2>
 
@@ -200,6 +295,9 @@
 </section>
 
 
+<div class="divider"></div>
+
+
 <!-- CONTACT -->
 <section id="contact" class="fade-in">
     <h2>Get in touch</h2>
@@ -209,23 +307,22 @@
     <p><strong>Email:</strong> 2028badivi@tjhsst.edu</p>
     <p><strong>Github:</strong> github.com/2028badivi</p>
     <p><strong>LinkedIn:</strong> www.linkedin.com/in/bhavesh-adivi-a50a93376</p>
-    
-    
 </section>
 
 <footer>
-    © 2025 Bhavesh Adivi<br>I built this page using template code and enhanced it with my own animations and features!
+    © 2025 Bhavesh Adivi<br>
+    I built this page using template code and enhanced it with my own animations and features!
 </footer>
 
 
 <script>
+    /* Typing Animation */
     const words = [
         "Innovator",
         "Collaborator",
         "Learner",
         "ML Enthusiast",
         "Aspiring Biomedical Researcher"
-        
     ];
 
     let index = 0;
@@ -258,6 +355,22 @@
     }
 
     typeEffect();
+
+
+    /* Scroll Reveal Animation */
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    function revealOnScroll() {
+        fadeElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if (rect.top < window.innerHeight - 100) {
+                el.classList.add("show");
+            }
+        });
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
 </script>
 
 </body>
