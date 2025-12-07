@@ -1,158 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bhavesh Adivi</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Bhavesh Adivi</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
-        body { background: #0f0f0f; color: white; line-height: 1.6; }
-        h1, h2, h3 { font-weight: 700; }
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; font-family: 'Inter', sans-serif; }
+body { background: #0f0f0f; color: white; line-height: 1.6; overflow-x:hidden; }
+h1, h2, h3 { font-weight: 700; }
 
-        nav { width: 100%; padding: 25px 50px; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(12px); z-index: 999; display: flex; justify-content: space-between; align-items: center; }
-        nav a { color: white; margin-left: 25px; text-decoration: none; font-size: 17px; transition: 0.3s; }
-        nav a:hover { color: #7ab6ff; }
+nav { width: 100%; padding: 25px 50px; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.45); backdrop-filter: blur(12px); z-index: 999; display: flex; justify-content: space-between; align-items: center; }
+nav a { color: white; margin-left: 25px; text-decoration: none; font-size: 17px; transition: 0.3s; }
+nav a:hover { color: #7ab6ff; }
 
-        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-left: 60px; background: linear-gradient(135deg, #001220, #000000); }
-        .hero h1 { font-size: 60px; }
-        .hero p { font-size: 22px; margin-top: 15px; max-width: 600px; opacity: 0.85; }
-        .hero .cta { margin-top: 40px; }
-        .btn { display: inline-block; padding: 15px 28px; border-radius: 10px; text-decoration: none; font-size: 18px; background: #1659e8; color: white; transition: 0.3s; }
-        .btn:hover { background: #2e72ff; }
+.hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; padding-left: 60px; position: relative; overflow: hidden; }
+.hero h1 { font-size: 60px; position: relative; z-index: 2; }
+.hero p { font-size: 22px; margin-top: 15px; max-width: 600px; opacity: 0.85; position: relative; z-index: 2; }
+.hero .cta { margin-top: 40px; position: relative; z-index: 2; }
+.btn { display: inline-block; padding: 15px 28px; border-radius: 10px; text-decoration: none; font-size: 18px; background: #1659e8; color: white; transition: 0.3s; }
+.btn:hover { background: #2e72ff; }
 
-        section { padding: 120px 70px; }
-        .section-title { font-size: 38px; margin-bottom: 35px; color: #7ab6ff; }
+section { padding: 120px 70px; }
+.section-title { font-size: 38px; margin-bottom: 35px; color: #7ab6ff; }
 
-        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
-        .project { background: #141414; padding: 25px; border-radius: 12px; transition: 0.35s; border: 1px solid #1f1f1f; }
-        .project:hover { transform: translateY(-6px); border-color: #2a63ff; }
+.project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 30px; }
+.project { background: #141414; padding: 25px; border-radius: 12px; transition: 0.35s; border: 1px solid #1f1f1f; }
+.project:hover { transform: translateY(-6px); border-color: #2a63ff; }
 
-        #awards, #interests { background: radial-gradient(circle at top, #0d1a33, #000); padding-top: 130px; padding-bottom: 130px; }
-        .award-card, .interest-card { background: #151515; border: 1px solid #262626; padding: 24px; border-radius: 14px; margin-bottom: 20px; transition: 0.3s; }
-        .award-card:hover, .interest-card:hover { transform: translateX(6px); border-color: #4f8bff; }
-        .award-title, .interest-title { font-size: 21px; margin-bottom: 7px; color: #a9c9ff; }
-        .award-desc, .interest-desc { opacity: 0.75; }
+#awards, #interests { background: radial-gradient(circle at top, #0d1a33, #000); padding-top: 130px; padding-bottom: 130px; }
+.award-card, .interest-card { background: #151515; border: 1px solid #262626; padding: 24px; border-radius: 14px; margin-bottom: 20px; transition: 0.3s; }
+.award-card:hover, .interest-card:hover { transform: translateX(6px); border-color: #4f8bff; }
+.award-title, .interest-title { font-size: 21px; margin-bottom: 7px; color: #a9c9ff; }
+.award-desc, .interest-desc { opacity: 0.75; }
 
-        #goals { background: #0a0a0a; padding-top: 130px; padding-bottom: 130px; }
-        .goal-list { margin-top: 20px; }
-        .goal-list li { margin-bottom: 12px; font-size: 18px; opacity: 0.85; }
+.resume-card { background:#151515; border:1px solid #262626; border-radius:12px; padding:20px; margin-bottom:20px; }
+.resume-item { margin:10px 0; padding:12px; border-radius:10px; background:linear-gradient(135deg, #1e1e1e, #2c2c2c); }
 
-        #contact { background: #050505; padding-bottom: 160px; }
-        footer { text-align: center; padding: 40px; opacity: 0.6; }
+#contact { background: #050505; padding-bottom: 160px; }
+footer { text-align: center; padding: 40px; opacity: 0.6; }
 
-        .typing-cursor { border-right: 3px solid #7ab6ff; animation: blink 0.8s infinite; }
-        @keyframes blink { 0%,50% { border-color: #7ab6ff; } 51%,100% { border-color: transparent; } }
-    </style>
+.typing-cursor { border-right: 3px solid #7ab6ff; animation: blink 0.8s infinite; }
+@keyframes blink { 0%,50% { border-color: #7ab6ff; } 51%,100% { border-color: transparent; } }
+
+#three-bg { position:absolute; top:0; left:0; width:100%; height:100%; z-index:1; }
+</style>
 </head>
 
 <body>
 
-    <nav>
-        <h2 style="font-size: 22px; color:#7ab6ff;">Bhavesh Adivi<span style='color:#7ab6ff;'></span></h2>
-        <div>
-            <a href="#home">Home</a>
-            <a href="#projects">Projects</a>
-            <a href="#awards">Awards</a>
-            <a href="#interests">Interests</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+<nav>
+    <h2 style="font-size: 22px; color:#7ab6ff;">Bhavesh Adivi</h2>
+    <div>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+    </div>
+</nav>
 
-    <section class="hero" id="home">
-        <h1>Hi, I’m Bhavesh<span style='color:#7ab6ff;'>.</span></h1>
-        <div style="font-size:28px; font-weight:600; margin-top:10px;">
-            <span></span><span id="typed-word" style="color:#7ab6ff;"></span><span class="typing-cursor"></span>
-        </div>
-        <p>A TJHSST '28 student exploring how <strong>machine learning</strong>, <strong>medicine</strong>, and <strong>engineering</strong> intersect to solve real-world problems. I build ML models, experiment with biomedical computation, and mentor younger students in designing robotics systems.</p>
-        <div class="cta"><a href="#interests" class="btn">View My Interests & Goals</a></div>
-    </section>
+<section class="hero" id="home">
+    <div id="three-bg"></div>
+    <h1>Hi, I’m Bhavesh<span style='color:#7ab6ff;'>.</span></h1>
+    <div style="font-size:28px; font-weight:600; margin-top:10px;">
+        <span></span><span id="typed-word" style="color:#7ab6ff;"></span><span class="typing-cursor"></span>
+    </div>
+    <p>A TJHSST '28 student exploring how <strong>deep learning</strong>, <strong>medicine</strong>, and <strong>engineering</strong> intersect to solve real-world problems. I build ML models for research applications, experiment with biomedical computation, and mentor younger students in designing robotics systems.</p>
+    <div class="cta"><a href="#interests" class="btn">View My Interests & Goals</a></div>
+</section>
 
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="project-grid">
-            <div class="project">
-                <h3>MelanoScan: A Diagnostic Tool for Early Melanoma Detection</h3>
-                <p>An Python ML + Enzyme Kinetics-based Experimental Dual-System (Arduino & C++) that is meant to analyze the suspected lesion microenvironment for KLK14 Protease and CDSN metabolic ratios and alignment with key superficial features as per the visual ABCDE framework for detecting metastatic Melanoma</p>
-            </div>
-            <div class="project">
-                <h3>DistilMind: Mental Health NLP Model</h3>
-                <p>BERT NLP model optimized on Quantized Low-Rank Adapters for enhanced sentiment and wellness indicators. Fully experimental project.</p>
-            </div>
-            <div class="project">
-                <h3>Pangolin: LLMs + HTTP + UI</h3>
-                <p>Streamlit interface using ngrok for remote access to advanced language model features.</p>
-            </div>
-            <div class="project">
-                <h3>Ionite: Club Spot Checker</h3>
-                <p>Python backend with Flask + Vercel + cron to auto-check availability for school activities on the TJHSST IONv3 Intranet API.</p>
-            </div>
-        </div>
-    </section>
+<section id="resume" style="background:#0a0a0a; padding:120px 70px;">
+    <h2 class="section-title">My Bio</h2>
 
-    <section id="awards">
-        <h2 class="section-title">Awards & Honors</h2>
-        <div class="award-card">
-            <h3 class="award-title">Gold Presidential Volunteer Service Award</h3>
-            <p class="award-desc">Awarded for extensive volunteer service and community impact (~200 hours 2024) in STEM mentorship and hospitality volunteering at Children's National Hospital.</p>
+    <div class="resume-card">
+        <h3>Passion Statement</h3>
+        <div class="resume-item">
+            I am a highly-motivated high school sophomore with a strong interest in CS/Bioinformatics. My passion lies deeply in innovation and service for the direct benefit of our community, whether it be providing younger students in my area with the resources and direct mentoring to pursue their interests in competitive robotics, or whether it was volunteering at Children's National Hospital while also planning a adolescent mental health intervention initiative with Fairfax County Health Department (PHYAP '25).
         </div>
-        <div class="award-card">
-            <h3 class="award-title">Destination Imagination</h3>
-            <p class="award-desc">Global Finals (5th place), States (4th place), and City level (1st place) awards for innovative solutions in challenges.</p>
-        </div>
-        <div class="award-card">
-            <h3 class="award-title">FIRST Robotics FTC, FRC, FLL</h3>
-            <p class="award-desc">Recognized for outstanding drivetrain design and competition success in FTC and FRC, mentored as youth-coach for FLL award-winning team.</p>
-        </div>
-    </section>
+    </div>
 
-    <section id="interests">
-        <h2 class="section-title">Interests & Future Goals</h2>
-        <div class="interest-card">
-            <h3 class="interest-title">Research Interests</h3>
-            <p class="interest-desc">AI in biomedical systems, computational immunology, mental health modeling, robotics, and sustainable engineering solutions.</p>
+    <div class="resume-card">
+        <h3>Education</h3>
+        <div class="resume-item">
+            <strong>Thomas Jefferson High School for Science and Technology</strong><br>GPA 4.409 | Expected Graduation: June 2028 | 5 AP classes & 7+ future AP's
+            <p style="opacity:0.8; margin-top:5px;">Relevant Coursework: AP Computer Science A | APCSA+ TJ Data Structures | AP Spanish | AP Biology (exam) | AP Seminar | AP PreCalculus BC<br>Future Relevant Coursework: AP Physics C (2026) | AP Chemistry (2026) | Neuroscience Research Laboratory (2027) | TJ AI 1/2  | TJ ML 1/2 | AP Calculus BC<p>
         </div>
-        <div class="interest-card">
-            <h3 class="interest-title">Future Goals</h3>
-            <ul class="goal-list">
-                <li>Advance machine learning applications for healthcare diagnostics.</li>
-                <li>Integrate computational biology with real-world clinical solutions.</li>
-                <li>Contribute to AI-driven mental health research platforms.</li>
-                <li>Mentor young students in STEM and computational research.</li>
-            </ul>
+    </div>
+
+    <div class="resume-card">
+        <h3>Projects / Research</h3>
+        <div class="resume-item"><strong>MelanoScan</strong> — 1st place school BENG, 3rd place county science fair</div>
+        <div class="resume-item"><strong>DistilMind</strong> — Enhanced Natural Sentiment Processing through Quantized Low-Rank Adaptation</div>
+    </div>
+
+    <div class="resume-card">
+        <h3>Professional Experience</h3>
+        <div class="resume-item"><strong>VT SEVA</strong> — Robotics Instructor / FLL Youth Coach (~283 hours)</div>
+        <div class="resume-item"><strong>Children’s National Hospital</strong> — Hospitality Volunteer (100+ hours)</div>
+        <div class="resume-item"><strong>US ARMY AEOP STEM Internship</strong> (~180 hours)</div>
+        <div class="resume-item"><strong>Fairfax County Health Department</strong> — Youth Public Health Ambassador (ongoing)</div>
+    </div>
+
+    <div class="resume-card">
+        <h3>Skills & Awards</h3>
+        <div class="resume-item"><strong>Programming:</strong> Python | Java | C++ | JS | HTML | R | Arduino | React | Deep Learning + AI frameworks</div>
+        <div class="resume-item"><strong>Hobbies:</strong> Advanced Violinist, Competitive Chess, Recreational Tennis</div>
+    </div>
+</section>
+
+
+<section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="project-grid">
+        <div class="project">
+            <h3>MelanoScan: A Diagnostic Tool for Early Melanoma Detection</h3>
+            <p>An Python ML + Enzyme Kinetics-based Experimental Dual-System (Arduino & C++) that is meant to analyze the suspected lesion microenvironment for KLK14 Protease and CDSN metabolic ratios and alignment with key superficial features as per the visual ABCDE framework for detecting metastatic Melanoma</p>
         </div>
-    </section>
+        <div class="project">
+            <h3>DistilMind: Mental Health NLP Model</h3>
+            <p>Enhanced Natural Sentiment Wellness Indicator Processing through Quantized Low-Rank Adaptation. <a href="https://huggingface.co/spaces/bhaveshadivi/distilMind" target="_blank" style="color: #FF0000;">Fully experimental BERT variant.</a></p>
+        </div>
+        <div class="project">
+            <h3>Pangolin: LLMs + HTTP + UI</h3>
+            <p>Streamlit interface using ngrok for remote access to advanced language model features.</p>
+        </div>
+        <div class="project">
+            <h3>Ionite: Club Spot Checker</h3>
+            <p>Python backend with Flask + Vercel + cron to auto-check availability for school activities on the TJHSST IONv3 Intranet API.</p>
+        </div>
+    </div>
+</section>
 
-    <section id="contact">
-        <h2 class="section-title">Get in touch with me</h2>
-        <p>Email: <strong>2028badivi@tjhsst.edu</strong></p>
-        <p>LinkedIn: <strong>www.linkedin.com/in/bhavesh-adivi-a50a93376</strong></p>
-        <p>GitHub: <strong>github.com/2028badivi</strong></p>
-    </section>
+<section id="awards">
+    <h2 class="section-title">Awards & Honors</h2>
+    <div class="award-card">
+        <h3 class="award-title">Gold Presidential Volunteer Service Award</h3>
+        <p class="award-desc">Awarded for extensive volunteer service and community impact (<strong>~200 hours 2024 & additional 210+ hours 2025<strong>) in STEM mentorship and hospitality volunteering at Children's National Hospital.</p>
+    </div>
+    <div class="award-card">
+        <h3 class="award-title">Destination Imagination Global Finals</h3>
+        <p class="award-desc"><strong>Global Finals (5th place), States (4th place), and City level (1st place)<strong> awards for innovative solutions in challenges. Built a mechanical device to autonomously navigate rough terrain and integrated Violin skills for presentation</p>
+    </div>
+    <div class="award-card">
+        <h3 class="award-title">FIRST Robotics FTC, FRC, FLL</h3>
+        <p class="award-desc">Recognized for outstanding drivetrain design and competition success in FTC and FRC, mentored as <strong>youth-coach for FLL award-winning team Future Fixers at States and Jurassic Spark as well as past member of <a href="https://ftc21386.wixsite.com/robotics" target="_blank" style="color: #FF0000;">team TX-RX for FTC</a><strong>.</p>
+    </div>
+</section>
 
-    <footer>© 2025 Bhavesh Adivi — All Rights Reserved</footer>
+<section id="interests">
+    <h2 class="section-title">Interests & Future Goals</h2>
+    
+    <div class="interest-card">
+        <h3 class="interest-title">Research Interests</h3>
+        <div class="resume-item">
+            AI in biomedical systems, computational immunology, mental health modeling, robotics, and sustainable engineering solutions.
+        </div>
+    </div>
+    
+    <div class="interest-card">
+        <h3 class="interest-title">Future Goals</h3>
+        <div class="resume-item">Advance machine learning applications for healthcare diagnostics.</div>
+        <div class="resume-item">Integrate computational biology with real-world clinical solutions.</div>
+        <div class="resume-item">Contribute to AI-driven mental health research platforms.</div>
+        <div class="resume-item">Mentor young students in STEM and computational research.</div>
+    </div>
+</section>
 
-    <script>
-        const words = ["Innovator", "Collaborator", "Learner", "Developer", "ML Enthusiast", "Aspiring Biomedical Researcher"];
-        let i = 0, j = 0, isDeleting = false;
-        const typed = document.getElementById('typed-word');
-        function typeEffect() {
-            const currentWord = words[i];
-            if (!isDeleting) {
-                typed.textContent = currentWord.substring(0, j+1);
-                j++;
-                if (j === currentWord.length) { setTimeout(()=>isDeleting=true,2000); }
-            } else {
-                typed.textContent = currentWord.substring(0, j-1);
-                j--;
-                if (j === 0) { isDeleting=false; i=(i+1)%words.length; }
-            }
-            setTimeout(typeEffect, isDeleting ? 40 : 60);
+
+
+<section id="contact">
+    <h2 class="section-title">Get in touch</h2>
+    <p>Email: <strong>2028badivi@tjhsst.edu</strong></p>
+    <p>LinkedIn: <strong>www.linkedin.com/in/bhavesh-adivi-a50a93376</strong></p>
+    <p>GitHub: <strong>github.com/2028badivi</strong></p>
+</section>
+
+<footer>© 2025 Bhavesh Adivi — All Rights Reserved</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.155.0/build/three.min.js"></script>
+<script>
+    // Typing effect
+    const words = ["Innovator", "Collaborator", "Learner", "Developer", "ML Enthusiast", "Aspiring Biomedical Researcher"];
+    let i = 0, j = 0, isDeleting = false;
+    const typed = document.getElementById('typed-word');
+    function typeEffect() {
+        const currentWord = words[i];
+        if (!isDeleting) {
+            typed.textContent = currentWord.substring(0, j+1);
+            j++;
+            if (j === currentWord.length) { setTimeout(()=>isDeleting=true,2000); }
+        } else {
+            typed.textContent = currentWord.substring(0, j-1);
+            j--;
+            if (j === 0) { isDeleting=false; i=(i+1)%words.length; }
         }
-        typeEffect();
-    </script>
+        setTimeout(typeEffect, isDeleting ? 40 : 60);
+    }
+    typeEffect();
+
+    // Three.js advanced particle animation
+    let scene, camera, renderer, points;
+    const mount = document.getElementById('three-bg');
+    const mouse = {x:0, y:0};
+
+    function initThree() {
+        const width = mount.clientWidth;
+        const height = mount.clientHeight;
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(75, width/height, 0.1, 2000);
+        camera.position.z = 200;
+
+        renderer = new THREE.WebGLRenderer({alpha:true, antialias:true});
+        renderer.setSize(width,height);
+        mount.appendChild(renderer.domElement);
+
+        // Particles
+        const geometry = new THREE.TorusKnotGeometry(50,12,200,32,2,5);
+        const colors = [];
+        for(let i=0;i<geometry.attributes.position.count;i++){
+            colors.push(Math.random(),0.5+Math.random()*0.5,1);
+        }
+        geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors,3));
+        const material = new THREE.PointsMaterial({size:1.5, vertexColors:true});
+        points = new THREE.Points(geometry, material);
+        scene.add(points);
+
+        window.addEventListener('resize',()=>{ 
+            renderer.setSize(mount.clientWidth,mount.clientHeight);
+            camera.aspect = mount.clientWidth/mount.clientHeight;
+            camera.updateProjectionMatrix();
+        });
+        window.addEventListener('mousemove',(e)=>{
+            mouse.x = (e.clientX/window.innerWidth)*2-1;
+            mouse.y = -(e.clientY/window.innerHeight)*2+1;
+        });
+    }
+
+    function animateThree() {
+        requestAnimationFrame(animateThree);
+        points.rotation.x += 0.002;
+        points.rotation.y += 0.003;
+
+        points.position.x += (mouse.x*30 - points.position.x)*0.03;
+        points.position.y += (mouse.y*30 - points.position.y)*0.03;
+
+        renderer.render(scene,camera);
+    }
+
+    initThree();
+    animateThree();
+</script>
 
 </body>
 </html>
