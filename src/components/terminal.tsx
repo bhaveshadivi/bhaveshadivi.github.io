@@ -124,7 +124,7 @@ export function Terminal() {
       fn: () => (
         <div className="space-y-0.5">
           <div>email:  2028badivi@tjhsst.edu</div>
-          <div>github: github.com/bhaveshadivi</div>
+          <div>github: github.com/2028badivi</div>
           <div>linkedin: linkedin.com/in/bhavesh-adivi</div>
         </div>
       ),
