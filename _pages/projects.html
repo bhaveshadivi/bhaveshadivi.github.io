@@ -94,13 +94,39 @@ author_profile: true
 .projects-subgroup {
   margin-top: 32px;
 }
-.projects-subgroup h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #24292e;
-  margin-bottom: 12px;
-  border-bottom: 1px solid #eaeef2;
-  padding-bottom: 8px;
+  .projects-subgroup h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #24292e;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eaeef2;
+    padding-bottom: 8px;
+  }
+
+html[data-theme="dark"] .projects-intro {
+  color: #e6edf3;
+}
+html[data-theme="dark"] .projects-section-title,
+html[data-theme="dark"] .projects-subgroup h4 {
+  color: #e6edf3;
+}
+html[data-theme="dark"] .projects-repo {
+  border-bottom-color: #30363d;
+}
+html[data-theme="dark"] .projects-subgroup h4 {
+  border-bottom-color: #30363d;
+}
+html[data-theme="dark"] .projects-repo .repo-icon {
+  color: #e6edf3;
+}
+html[data-theme="dark"] .projects-repo p {
+  color: #c9d1d9;
+}
+html[data-theme="dark"] .projects-repo .repo-meta {
+  color: #8b949e;
+}
+html[data-theme="dark"] .projects-repo .repo-meta .lang-dot {
+  background: #e6edf3;
 }
 </style>
 
