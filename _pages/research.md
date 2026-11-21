@@ -5,6 +5,32 @@ permalink: /research/
 author_profile: true
 ---
 
+{% include base_path %}
+
+<style>
+html[data-theme="dark"] h2,
+html[data-theme="dark"] h3 {
+  color: #e6edf3;
+}
+h2, h3 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+h2 {
+  text-decoration-color: #ef4444;
+}
+h3 {
+  text-decoration-color: #10b981;
+}
+html[data-theme="dark"] h2 {
+  text-decoration-color: #f87171;
+}
+html[data-theme="dark"] h3 {
+  text-decoration-color: #34d399;
+}
+</style>
+
 ## Research Overview
 
 My research sits at the intersection of computational proteomics and artificial intelligence/machine learning, with a focus on converting complex biological and omics datasets into interpretable discoveries and practical health technologies.

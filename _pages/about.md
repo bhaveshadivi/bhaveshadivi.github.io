@@ -106,6 +106,15 @@ html[data-theme="dark"] .contact-links span:hover {
   border-color: #ffffff;
   color: #ffffff;
 }
+h2 {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  text-decoration-color: #0066ff;
+}
+html[data-theme="dark"] h2 {
+  text-decoration-color: #4da6ff;
+}
 .blue-underline {
   color: #0066ff;
   text-decoration: none;
