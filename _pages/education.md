@@ -5,7 +5,7 @@ permalink: /education/
 author_profile: true
 ---
 
-## Thomas Jefferson High School for Science and Technology (TJHSST)
+## Thomas Jefferson HS for Science and Technology
 **Ranked sixth high school nationally**  
 **Alexandria, Virginia**  
 **GPA:** 4.511 | **SAT:** 1530 | **Graduation:** June 2028
