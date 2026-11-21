@@ -1,0 +1,347 @@
+---
+layout: archive
+title: "Projects"
+permalink: /projects/
+author_profile: true
+---
+
+{% include base_path %}
+
+<style>
+.projects-repo-list {
+  margin-top: 16px;
+}
+.projects-repo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  border-bottom: 1px solid #eaeef2;
+  position: relative;
+}
+.projects-repo:last-child {
+  border-bottom: none;
+}
+.projects-repo .repo-icon {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  color: #24292e;
+}
+.projects-repo .repo-info {
+  flex: 1;
+  min-width: 0;
+}
+.projects-repo h3 {
+  margin: 0 0 4px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.projects-repo h3 a {
+  color: #0969da;
+  text-decoration: none;
+}
+.projects-repo h3 a:hover {
+  text-decoration: underline;
+}
+.projects-repo p {
+  margin: 0 0 8px;
+  font-size: 0.9rem;
+  color: #57606a;
+  line-height: 1.4;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.projects-repo .repo-meta {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  font-size: 0.8rem;
+  color: #6e7781;
+}
+.projects-repo .repo-meta a {
+  color: #0969da;
+  text-decoration: none;
+  font-weight: 500;
+}
+.projects-repo .repo-meta a:hover {
+  text-decoration: underline;
+}
+.projects-repo .repo-meta .repo-lang {
+  font-weight: 400;
+}
+.projects-repo .repo-meta .lang-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 6px;
+  background: #24292e;
+}
+.projects-intro {
+  font-size: 1rem;
+  color: #57606a;
+  margin-bottom: 24px;
+  max-width: 700px;
+}
+.projects-section-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #24292e;
+  margin-bottom: 20px;
+}
+.projects-subgroup {
+  margin-top: 32px;
+}
+.projects-subgroup h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #24292e;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #eaeef2;
+  padding-bottom: 8px;
+}
+</style>
+
+<p class="projects-intro">A selection of software, research tools, and hackathon projects. Source code linked where available.</p>
+
+<div class="projects-repo-list">
+
+  <div class="projects-repo">
+    <i class="repo-icon fa-solid fa-network-wired" aria-hidden="true"></i>
+    <div class="repo-info">
+      <h3><a href="https://codethecure.app">CodeTheCure AI</a></h3>
+      <p>RAG-powered AI software for oncology patients · 300+ monthly users</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot" style="background:#2b7489"></span>TypeScript</span>
+        <a href="https://codethecure.app"><i class="fa-solid fa-external-link-alt" aria-hidden="true" style="font-size:0.75rem"></i> Website</a>
+        <a href="https://github.com/codethecure/"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-repo">
+    <i class="repo-icon fa-solid fa-microphone" aria-hidden="true"></i>
+    <div class="repo-info">
+      <h3><a href="https://github.com/2028badivi/oncowispr">OncoWispr</a></h3>
+      <p>Voice-dictation tool for cancer patients · National Finalist @ 2026 USAII hackathon</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+        <a href="https://github.com/2028badivi/oncowispr"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-repo">
+    <i class="repo-icon fa-solid fa-elevator" aria-hidden="true"></i>
+    <div class="repo-info">
+      <h3><a href="https://github.com/2028badivi/occ-elevator-gui">OpenCyberCity: Elevator GUI (VCU)</a></h3>
+      <p>Simulated smart-city robotics testbed · Raspberry Pi · CAD-based elevator GUI</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot" style="background:#f1e05a"></span>Python</span>
+        <a href="https://github.com/2028badivi/occ-elevator-gui"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-repo">
+    <i class="repo-icon fa-solid fa-dna" aria-hidden="true"></i>
+    <div class="repo-info">
+      <h3><a href="https://github.com/2028badivi/distilmind">DistilMind</a></h3>
+      <p>Text classifier for mental health sentiment detection</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+        <a href="https://github.com/2028badivi/distilmind"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-repo">
+    <i class="repo-icon fa-solid fa-gamepad" aria-hidden="true"></i>
+    <div class="repo-info">
+      <h3><a href="https://github.com/2028badivi/petrpg">petRPG</a></h3>
+      <p>Block-programming simulation game · 2nd place, TJHSST FBLA 2026 Intro to Programming</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+        <a href="https://github.com/2028badivi/petrpg"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="projects-repo">
+    <i class="repo-icon fa-solid fa-location-dot" aria-hidden="true"></i>
+    <div class="repo-info">
+      <h3><a href="https://github.com/2028badivi/ionite">ionite</a></h3>
+      <p>Club spot checker · Flask 3 on Vercel with Serverless Functions</p>
+      <div class="repo-meta">
+        <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+        <a href="https://github.com/2028badivi/ionite"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="projects-subgroup">
+  <h4>Research &amp; Computational Tools</h4>
+  <div class="projects-repo-list">
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-microscope" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/geneta">geneta</a></h3>
+        <p>Integrated high-throughput gene analysis tools</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+          <a href="https://github.com/2028badivi/geneta"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-undo" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/gene-reversibility">gene-reversibility</a></h3>
+        <p>Computational study of gene expression reversibility</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+          <a href="https://github.com/2028badivi/gene-reversibility"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-plane" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/airline-sentiment-analysis-2026">Airline Sentiment Analysis</a></h3>
+        <p>NLP-based sentiment analysis of airline customer feedback</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+          <a href="https://github.com/2028badivi/airline-sentiment-analysis-2026"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-terminal" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/3-prime">3-prime</a></h3>
+        <p>CLI language for bioinformatics tables and simple stats</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+          <a href="https://github.com/2028badivi/3-prime"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-paint-brush" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/ascii">ascii</a></h3>
+        <p>ASCII Art Generator - turns images into text for GitHub READMEs</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+          <a href="https://github.com/2028badivi/ascii"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-music" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/violin-tuner">violin-tuner</a></h3>
+        <p>Violin Tuner using pyaudio - frequency detection (sharp/flat)</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+          <a href="https://github.com/2028badivi/violin-tuner"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-chess-board" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/chess-repertoire">chess-repertoire</a></h3>
+        <p>PGN-based chess trainer - asks for White's best move</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f1e05a"></span>HTML</span>
+          <a href="https://github.com/2028badivi/chess-repertoire"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-hands" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/HaptiKit">HaptiKit</a></h3>
+        <p>C++ haptics project</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>C++</span>
+          <a href="https://github.com/2028badivi/HaptiKit"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-terminal" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/cobalt">cobalt</a></h3>
+        <p>Python interpreter built on the JVM</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#007396"></span>Java</span>
+          <a href="https://github.com/2028badivi/cobalt"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-calendar" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/juniper">Juniper</a></h3>
+        <p>Intelligent calendar system for cancer patients · Juniper 1.2</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+          <a href="https://github.com/2028badivi/juniper"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-code" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/interj">InterJ</a></h3>
+        <p>InterJ: Categorical Jacobians for deep learning interpretability research of protein-protein interaction models and protein language models</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f34b29"></span>Python</span>
+          <a href="https://github.com/2028badivi/interj"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-book" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/sat-vocab">sat-vocab</a></h3>
+        <p>JavaScript SAT vocabulary project</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#f1e05a"></span>JavaScript</span>
+          <a href="https://github.com/2028badivi/sat-vocab"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="projects-repo">
+      <i class="repo-icon fa-solid fa-leaf" aria-hidden="true"></i>
+      <div class="repo-info">
+        <h3><a href="https://github.com/2028badivi/rivertide-leafy">rivertide-leafy</a></h3>
+        <p>TypeScript project · forked from goutamk914/rivertide-leafy</p>
+        <div class="repo-meta">
+          <span class="repo-lang"><span class="lang-dot" style="background:#3178c6"></span>TypeScript</span>
+          <a href="https://github.com/2028badivi/rivertide-leafy"><i class="fab fa-github" aria-hidden="true" style="font-size:0.75rem"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

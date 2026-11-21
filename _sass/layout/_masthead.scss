@@ -1,0 +1,156 @@
+/* ==========================================================================
+   MASTHEAD
+   ========================================================================== */
+
+.masthead {
+  position: fixed;
+  background: var(--global-bg-color);
+  height: fit-content;
+  top: 0;
+  width: 100%;
+
+  -webkit-animation: intro 0.3s both;
+          animation: intro 0.3s both;
+  -webkit-animation-delay: 0.15s;
+          animation-delay: 0.15s;
+  z-index: 20;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 1px;
+    background: var(--global-border-color);
+    width: 100%;
+  }
+
+  &__inner-wrap {
+    @include container;
+    @include clearfix;
+    padding: 0.5em 1em;
+    font-family: $sans-serif-narrow;
+
+    @include breakpoint($x-large) {
+      max-width: $x-large;
+    }
+
+    nav {
+      z-index: 10;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.masthead__menu {
+
+  ul {
+    margin: 0;
+    padding: 0;
+    clear: both;
+    list-style-type: none;
+  }
+}
+
+.masthead__menu-item {
+  background-color: var(--global-bg-color);
+  display: block;
+  list-style-type: none;
+  white-space: nowrap;
+
+  &--lg {
+    padding-right: 2em;
+    font-weight: 700;
+  }
+}
+
+.masthead__brand-first,
+.masthead__brand-last {
+  font-weight: 700;
+}
+
+.masthead__menu-item--lg a .masthead__brand-first {
+  color: var(--global-text-color);
+}
+
+.masthead__menu-item--lg a .masthead__brand-last {
+  color: #fff;
+  background-color: var(--global-text-color);
+  border-radius: $border-radius;
+  padding: 0 0.2em;
+}
+
+html[data-theme="dark"] .masthead__menu-item--lg a .masthead__brand-last {
+  color: #212529;
+  background-color: #fff;
+}
+
+.masthead__menu-item.selected a {
+  color: var(--global-text-color);
+  font-weight: 700;
+  border-bottom: 2px solid var(--global-text-color);
+  pointer-events: none; /* Move this here */
+  cursor: default; /* Move this here too */
+}
+
+.masthead__menu-item.selected a:hover {
+  color: var(--global-text-color);
+  border-bottom: 2px solid var(--global-text-color);
+  /* No need to repeat pointer-events and cursor here */
+}
+
+/* Name overlay - centered, auto-dismiss, no close button */
+.name-overlay {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100001;
+  font-family: $sans-serif-narrow;
+  font-size: 36px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  color: var(--global-text-color);
+  opacity: 1;
+  transition: opacity 0.5s ease;
+
+  .name-first {
+    color: var(--global-text-color);
+  }
+
+  .name-last {
+    color: #fff;
+    background: var(--global-text-color);
+    border-radius: $border-radius;
+    padding: 6px 16px;
+    margin-left: 8px;
+  }
+}
+
+html[data-theme="dark"] .name-overlay {
+  color: #fff;
+
+  .name-first {
+    color: #fff;
+  }
+
+  .name-last {
+    color: #212529;
+    background: #fff;
+  }
+
+  /* Auto-dismiss on dark theme after 3 seconds */
+  &.--auto-dismiss {
+    animation: fadeOut 0.5s ease forwards 3s;
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

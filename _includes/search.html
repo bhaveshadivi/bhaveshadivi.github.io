@@ -1,0 +1,27 @@
+<div class="search-overlay" id="search-overlay" aria-hidden="true">
+  <div class="search-overlay__backdrop" data-search-close></div>
+  <div class="search-overlay__panel" role="dialog" aria-modal="true" aria-label="Site search">
+    <div class="search-overlay__input-wrap">
+      <i class="fa-solid fa-magnifying-glass search-overlay__icon" aria-hidden="true"></i>
+      <input
+        type="text"
+        class="search-overlay__input"
+        id="search-input"
+        placeholder="Search publications, talks, portfolio..."
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      >
+      <kbd class="search-overlay__kbd">esc</kbd>
+    </div>
+    <div class="search-overlay__results" id="search-results">
+      <div class="search-overlay__empty">Start typing to search the site</div>
+    </div>
+    <div class="search-overlay__footer">
+      <span class="search-overlay__hint"><kbd>&uarr;</kbd> <kbd>&darr;</kbd> navigate</span>
+      <span class="search-overlay__hint"><kbd>&#8629;</kbd> open</span>
+      <span class="search-overlay__hint"><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
