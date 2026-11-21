@@ -8,7 +8,7 @@ I am a high school student at Thomas Jefferson High School for Science and Techn
 
 ## Research Interests
 
-- **Interpretability of protein language models:** Testing through interpretability research whether the features that these protein language models and protein-protein attraction models learn actually match real biological patterns through interchain categorical Jacobians and Knowledge Distillation.
+- **Interpretability of protein language models:** Testing through interpretability research whether the features that these protein language models and protein-protein interaction models learn actually match real biological patterns through interchain categorical Jacobians and Knowledge Distillation.
 - **Computational proteomics:** Modeling protein stability and how proteins depend on helper proteins called chaperones by training the first-ever chaperone-dependency prediction Graph Network Model.
 - **Machine learning for omics data:** Applying explainable AI and symbolic regression to gene expression data at NASA GeneLab (Summer 2026, ASGSR Annual Conference 2026).
 - **Mechanistic models in medicine:** Combining mechanistic model heuristics of the original Dynamic Precision Medicine (DPM) Generalized Evolutionary Classifier (EC1) with novel clustering research for Mixture-of-Experts XGBoost optimal treatment trajectory prediction training at Georgetown University DPM Lab (Innovation Center for Biomedical Informatics).
